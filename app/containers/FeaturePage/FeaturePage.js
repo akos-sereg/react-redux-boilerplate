@@ -1,8 +1,3 @@
-/*
- * FeaturePage
- *
- * List all the features
- */
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import './style.scss';

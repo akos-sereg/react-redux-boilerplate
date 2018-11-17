@@ -13,6 +13,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
+import { HashRouter } from 'react-router-dom';
 import FontFaceObserver from 'fontfaceobserver';
 import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
@@ -51,9 +52,9 @@ const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       {/* <LanguageProvider messages={messages}> */}
-      <ConnectedRouter history={history}>
+      <HashRouter history={history}>
         <App />
-      </ConnectedRouter>
+      </HashRouter>
       {/* </LanguageProvider> */}
     </Provider>,
     MOUNT_NODE
