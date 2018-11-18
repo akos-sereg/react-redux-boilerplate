@@ -3,7 +3,7 @@ import './style.scss';
 
 const Footer = () => (
   <div>
-    Footer
+    &nbsp;
   </div>
 );
 
