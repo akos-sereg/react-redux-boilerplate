@@ -16,12 +16,6 @@ export default class ManageAuthorPage extends React.Component {
     this.setAuthorState = this.setAuthorState.bind(this);
   }
 
-  saveAuthor() {
-  }
-
-  setAuthorState() {
-  }
-
   componentWillMount() {
     const authorId = this.props.match.params.id;
 
@@ -31,13 +25,23 @@ export default class ManageAuthorPage extends React.Component {
     }
   }
 
+  setAuthorState(event) {
+    const stateAuthor = this.state.author;
+    stateAuthor[event.target.name] = event.target.value;
+    return this.setState({ author: stateAuthor });
+  }
+
+  saveAuthor(event) {
+    this.props.onSaveAuthor(event, this.state.author);
+  }
+
   render() {
     return (
       <AuthorForm
         author={this.state.author}
+        errors={this.state.errors}
         onSave={this.saveAuthor}
         onChange={this.setAuthorState}
-        errors={this.state.errors}
       />
 
     );
@@ -45,6 +49,6 @@ export default class ManageAuthorPage extends React.Component {
 }
 
 ManageAuthorPage.propTypes = {
-  errors: PropTypes.object,
-  match: PropTypes.object
+  match: PropTypes.object,
+  onSaveAuthor: PropTypes.func
 };

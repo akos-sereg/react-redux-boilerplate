@@ -2,8 +2,6 @@ import {
   FETCH_AUTHORS,
   FETCH_AUTHORS_SUCCESS,
   FETCH_AUTHORS_ERROR,
-  CREATE_AUTHOR,
-  UPDATE_AUTHOR,
   DELETE_AUTHOR,
   DELETE_AUTHOR_SUCCESS
 } from './constants';
@@ -25,20 +23,6 @@ export function fetchAuthorsError(error) {
   return {
     type: FETCH_AUTHORS_ERROR,
     error,
-  };
-}
-
-export function createAuthor(author) {
-  return {
-    type: CREATE_AUTHOR,
-    author
-  };
-}
-
-export function updateAuthor(author) {
-  return {
-    type: UPDATE_AUTHOR,
-    author
   };
 }
 

@@ -4,7 +4,8 @@ import AuthorApi from '../../services/AuthorApi';
 import {
   FETCH_AUTHORS,
   FETCH_AUTHORS_SUCCESS,
-  FETCH_AUTHORS_ERROR, DELETE_AUTHOR_SUCCESS,
+  FETCH_AUTHORS_ERROR,
+  DELETE_AUTHOR_SUCCESS,
 } from './constants';
 
 // The initial state of the App

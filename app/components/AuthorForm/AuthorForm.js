@@ -8,7 +8,6 @@ export default class AuthorForm extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <form>
 
@@ -32,7 +31,7 @@ export default class AuthorForm extends React.Component {
         />
         <br />
 
-        <input type="submit" value="Save" className="btn btn-default" onClick={this.props.onSave} />
+        <input type="submit" value="Save" className="btn btn-default" onClick={(event) => this.props.onSave(event)} />
 
       </form>
     );
