@@ -4,7 +4,8 @@ import {
   FETCH_AUTHORS_ERROR,
   CREATE_AUTHOR,
   UPDATE_AUTHOR,
-  DELETE_AUTHOR
+  DELETE_AUTHOR,
+  DELETE_AUTHOR_SUCCESS
 } from './constants';
 
 export function fetchAuthors() {
@@ -44,6 +45,13 @@ export function updateAuthor(author) {
 export function deleteAuthor(id) {
   return {
     type: DELETE_AUTHOR,
+    id
+  };
+}
+
+export function deleteAuthorSuccess(id) {
+  return {
+    type: DELETE_AUTHOR_SUCCESS,
     id
   };
 }

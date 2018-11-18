@@ -4,3 +4,4 @@ export const FETCH_AUTHORS_ERROR = 'boilerplate/Author/FETCH_AUTHORS_ERROR';
 export const CREATE_AUTHOR = 'boilerplate/Author/CREATE_AUTHOR';
 export const UPDATE_AUTHOR = 'boilerplate/Author/UPDATE_AUTHOR';
 export const DELETE_AUTHOR = 'boilerplate/Author/DELETE_AUTHOR';
+export const DELETE_AUTHOR_SUCCESS = 'boilerplate/Author/DELETE_AUTHOR_SUCCESS';

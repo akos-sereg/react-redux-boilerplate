@@ -19,7 +19,7 @@ export default class AuthorsPage extends React.PureComponent { // eslint-disable
       <div>
         <h1>Authors</h1>
         <Link to="addAuthor" className="btn btn-default">Add Author</Link>
-        <AuthorList authors={authors} />
+        <AuthorList onDeleteAuthor={this.props.onDeleteAuthor} authors={authors} />
       </div>
     );
   }
@@ -29,4 +29,5 @@ export default class AuthorsPage extends React.PureComponent { // eslint-disable
 AuthorsPage.propTypes = {
   authors: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   onFetchAuthors: PropTypes.func,
+  onDeleteAuthor: PropTypes.func,
 };

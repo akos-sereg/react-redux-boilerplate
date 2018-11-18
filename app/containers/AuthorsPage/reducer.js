@@ -1,9 +1,10 @@
 import { fromJS } from 'immutable';
+import AuthorApi from '../../services/AuthorApi';
 
 import {
   FETCH_AUTHORS,
   FETCH_AUTHORS_SUCCESS,
-  FETCH_AUTHORS_ERROR,
+  FETCH_AUTHORS_ERROR, DELETE_AUTHOR_SUCCESS,
 } from './constants';
 
 // The initial state of the App
@@ -35,6 +36,12 @@ function authorsReducer(state = initialState, action) {
         .set('error', action.error)
         .set('loading', false)
         .setIn(['userData', 'authors'], []);
+
+    case DELETE_AUTHOR_SUCCESS:
+      return state
+        .set('error', action.error)
+        .set('loading', false)
+        .setIn(['userData', 'authors'], AuthorApi.getAllAuthors());
 
     default:
       return state;

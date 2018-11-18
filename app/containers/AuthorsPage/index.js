@@ -7,7 +7,7 @@ import { makeSelectAuthors } from './selectors';
 import saga from './saga';
 import reducer from './reducer';
 import AuthorsPage from './AuthorsPage';
-import { fetchAuthors } from './actions';
+import { fetchAuthors, deleteAuthor } from './actions';
 
 const mapDispatchToProps = (dispatch) => ({
   onFetchAuthors: (evt) => {
@@ -15,6 +15,14 @@ const mapDispatchToProps = (dispatch) => ({
       evt.preventDefault();
     }
     dispatch(fetchAuthors());
+  },
+
+  onDeleteAuthor: (evt, id) => {
+    if (evt !== undefined && evt.preventDefault) {
+      evt.preventDefault();
+    }
+
+    dispatch(deleteAuthor(id));
   }
 });
 
