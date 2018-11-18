@@ -7,7 +7,6 @@ import 'toastr/build/toastr.min.css';
 class AuthorList extends React.Component {
   deleteAuthor(event, id) {
     this.props.onDeleteAuthor(event, id);
-    debugger;
     toastr.success('Author Deleted.');
   }
 
@@ -18,7 +17,7 @@ class AuthorList extends React.Component {
           <a href="#" onClick={(e) => this.deleteAuthor(e, author.id)}>Delete</a>
         </td>
         <td>
-          <Link to="manageAuthor" params={{ id: author.id }}>{author.id}</Link>
+          <Link to={`/author/${author.id}`}>{author.id}</Link>
         </td>
         <td>
           {author.firstName} {author.lastName}

@@ -5,7 +5,7 @@ import AuthorList from '../../components/AuthorList';
 import './style.scss';
 
 
-export default class AuthorsPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export default class AuthorsPage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   // eslint-disable-line react/prefer-stateless-function
 
   componentDidMount() {

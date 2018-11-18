@@ -13,9 +13,9 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
           </Link>
           <ul className="nav navbar-nav">
 
-            <li><Link to="app">Home</Link></li>
-            <li><Link to="authors">Authors</Link></li>
-            <li><Link to="about">About</Link></li>
+            <li><Link to="/app">Home</Link></li>
+            <li><Link to="/authors">Authors</Link></li>
+            <li><Link to="/about">About</Link></li>
           </ul>
         </div>
       </nav>
