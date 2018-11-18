@@ -11,7 +11,7 @@ import Footer from 'components/Footer';
 import './style.scss';
 
 const App = () => (
-  <div className="app-wrapper">
+  <div>
     <Helmet
       titleTemplate="%s - React.js Boilerplate"
       defaultTitle="React.js Boilerplate"

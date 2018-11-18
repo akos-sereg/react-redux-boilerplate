@@ -12,11 +12,12 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
 import { HashRouter } from 'react-router-dom';
 import FontFaceObserver from 'fontfaceobserver';
 import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 
 // Import root app
 import App from 'containers/App';
@@ -52,7 +53,7 @@ const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       {/* <LanguageProvider messages={messages}> */}
-      <HashRouter history={history}>
+      <HashRouter>
         <App />
       </HashRouter>
       {/* </LanguageProvider> */}
