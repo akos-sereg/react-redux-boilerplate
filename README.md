@@ -2,12 +2,13 @@
 
 ### Stack and Features
 
-- ES6
+- ES6 support
 - React
 - React Router
+- Redux
 - Hot Reload
-- Facebook's Flux ``todo be replaced with Redux``
-- Gulp task runner
-- Toastr notifications
+- Webpack
+- ``todo`` Toastr notifications
 - ``todo`` Sourcemap
-- ``todo`` Webpack
+
+
