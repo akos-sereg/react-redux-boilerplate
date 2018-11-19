@@ -18,7 +18,6 @@ const initialState = fromJS({
 });
 
 function authorsReducer(state = initialState, action) {
-
   switch (action.type) {
     case FETCH_AUTHORS:
       return state

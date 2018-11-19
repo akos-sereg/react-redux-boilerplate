@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default class TextInput extends React.Component {
-
   render() {
     let wrapperClass = 'form-group';
     if (this.props.error && this.props.error.length > 0) {
@@ -11,6 +10,7 @@ export default class TextInput extends React.Component {
 
     return (
       <div className={wrapperClass}>
+        {/* eslint-disable jsx-a11y/label-has-for */}
         <label htmlFor={this.props.name}>{this.props.label}</label>
         <div className="field">
           <input

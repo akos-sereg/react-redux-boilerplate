@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import TextInput from '../../components/TextInput';
 
 export default class AuthorForm extends React.Component {
-
   componentDidMount() {
   }
 

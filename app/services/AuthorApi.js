@@ -31,8 +31,6 @@ class AuthorApi {
   }
 
   saveAuthor(author) {
-    console.log('Pretend this just saved the author to the DB via AJAX call...');
-
     if (author.id) {
       const existingAuthorIndex = _.indexOf(this.authors, _.find(this.authors, { id: author.id }));
       this.authors.splice(existingAuthorIndex, 1, author);
@@ -45,7 +43,6 @@ class AuthorApi {
   }
 
   deleteAuthor(id) {
-    console.log('Pretend this just deleted the author from the DB via an AJAX call...');
     _.remove(this.authors, { id });
   }
 

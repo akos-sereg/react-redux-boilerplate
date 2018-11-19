@@ -4,7 +4,6 @@ import AuthorForm from '../../components/AuthorForm';
 import AuthorApi from '../../services/AuthorApi';
 
 export default class ManageAuthorPage extends React.Component {
-
   constructor(props, context) {
     super(props, context);
     this.state = {

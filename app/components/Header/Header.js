@@ -9,7 +9,7 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
       <nav className="navbar navbar-default">
         <div className="container-fluid">
           <Link to="app" className="navbar-brand">
-            <img src={Favicon} height="24" />
+            <img alt="Favicon" src={Favicon} height="24" />
           </Link>
           <ul className="nav navbar-nav">
 
