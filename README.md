@@ -1,6 +1,7 @@
 # react-redux-boilerplate
 
-This project is a working standalone front-end app aiming to demonstrate best practices. 
+This project is a working standalone front-end app aiming to demonstrate best javascript practices and common usage of React / Redux. 
+
 It is using the latest React + Redux as of November 2018.
 
 ## Usage
@@ -23,25 +24,31 @@ This will produce artifacts under ``build`` folder
 
 The goal of this setup is to have similar project setup as Prompt Self-Service teams have, with upgraded versions.
 
-### Language
+#### Language
 - ES6 support
 - SCSS support
 
-### Stack
+#### Stack
 - React v16.6.3 - released 13rd of Nov 2018
 - Redux v4.0.1 - released 13rd of Oct 2018
 
-### Development and Build
+#### Development and Build
 - Hot Reload
 - Webpack
 - Sourcemap
+- Jest
 - ESLint - ``npm run lint``
 
-### User Interface
-- Bootstrap
+#### User Interface
+- Bootstrap 3
 - Toastr notifications
 
-## TODOs
+## Testing
 
-- Do we want to keep ``jest``? If not, let's remove it.
+Run the following command
 
+```
+$ npm run test
+``` 
+
+It generates a coverage report as well. You can set coverage expectations in ``config/jest.config.js``

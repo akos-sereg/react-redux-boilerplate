@@ -3,7 +3,7 @@ import './style.scss';
 
 const Footer = () => (
   <div>
-    &nbsp;
+    This web app is using React, Redux, Jest, Webpack, etc ...
   </div>
 );
 
