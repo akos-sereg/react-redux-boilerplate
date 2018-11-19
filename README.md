@@ -41,4 +41,7 @@ The goal of this setup is to have similar project setup as Prompt Self-Service t
 - Bootstrap
 - Toastr notifications
 
+## TODOs
+
+- Do we want to keep ``jest``? If not, let's remove it.
 
