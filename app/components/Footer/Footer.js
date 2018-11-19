@@ -3,7 +3,9 @@ import './style.scss';
 
 const Footer = () => (
   <div>
-    This web app is using React, Redux, Jest, Webpack, etc ...
+    <p className="footer">
+      This web app is using React, Redux, Jest, Webpack, etc ...
+    </p>
   </div>
 );
 
