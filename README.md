@@ -22,8 +22,6 @@ This will produce artifacts under ``build`` folder
 
 ## Stack and Features
 
-The goal of this setup is to have similar project setup as Prompt Self-Service teams have, with upgraded versions.
-
 #### Language
 - ES6 support
 - SCSS support
