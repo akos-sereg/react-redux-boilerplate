@@ -27,7 +27,7 @@ This will produce artifacts under ``build`` folder
 - SCSS support
 
 #### Stack
-- React v16.6.3 - released 13rd of Nov 2018
+- React v17.0.2 - released 22nd of March 2021
 - Redux v4.0.1 - released 13rd of Oct 2018
 
 #### Development and Build
