@@ -17,12 +17,14 @@ module.exports = (options) => ({
   module: {
     rules: [
       {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
+      },
+      {
         test: /\.js$/, // Transform all .js files required somewhere with Babel
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: options.babelQuery,
-        },
+        use: 'ts-loader',
       },
       {
         // Preprocess our own .scss files
@@ -99,6 +101,8 @@ module.exports = (options) => ({
   resolve: {
     modules: ['app', 'node_modules'],
     extensions: [
+      '.tsx',
+      '.ts',
       '.js',
       '.jsx',
       '.scss',

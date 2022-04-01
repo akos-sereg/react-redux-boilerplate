@@ -1,6 +1,9 @@
-import _ from 'lodash';
+import * as _ from 'lodash';
+import { Author } from '../model/Author'
 
 class AuthorApi {
+  authors: Author[];
+
   constructor() {
     this.authors = [
       {
@@ -25,12 +28,12 @@ class AuthorApi {
     return AuthorApi.clone(this.authors);
   }
 
-  getAuthorById(id) {
+  getAuthorById(id: string) {
     const author = _.find(this.authors, { id });
     return AuthorApi.clone(author);
   }
 
-  saveAuthor(author) {
+  saveAuthor(author: Author) {
     if (author.id) {
       const existingAuthorIndex = _.indexOf(this.authors, _.find(this.authors, { id: author.id }));
       this.authors.splice(existingAuthorIndex, 1, author);
@@ -42,15 +45,15 @@ class AuthorApi {
     return AuthorApi.clone(author);
   }
 
-  deleteAuthor(id) {
+  deleteAuthor(id: string) {
     _.remove(this.authors, { id });
   }
 
-  static clone(item) {
+  static clone(item: any) {
     return JSON.parse(JSON.stringify(item));
   }
 
-  static generateId(author) {
+  static generateId(author: Author) {
     return `${author.firstName.toLowerCase()}-${author.lastName.toLowerCase()}`;
   }
 }

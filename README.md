@@ -23,8 +23,9 @@ This will produce artifacts under ``build`` folder
 ## Stack and Features
 
 #### Language
-- ES6 support
-- SCSS support
+- ES6
+- SCSS
+- Typescript
 
 #### Stack
 - React v17.0.2 - released 22nd of March 2021
@@ -40,6 +41,10 @@ This will produce artifacts under ``build`` folder
 #### User Interface
 - Bootstrap 3
 - Toastr notifications
+
+#### Typescript
+
+npm install --save-dev typescript ts-loader
 
 ## Testing
 
