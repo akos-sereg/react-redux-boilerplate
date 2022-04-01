@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Component } from 'react';
-// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import * as toastr from 'toastr';
 import 'toastr/build/toastr.min.css';

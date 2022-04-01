@@ -11,7 +11,7 @@ export function* getAuthors() {
   }
 }
 
-export function* deleteAuthor(action) {
+export function* deleteAuthor(action: any) {
   AuthorApi.deleteAuthor(action.id);
   yield put(deleteAuthorSuccess(action.id));
 }
