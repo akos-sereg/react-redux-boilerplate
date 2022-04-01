@@ -1,17 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import { Component } from 'react';
+// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import toastr from 'toastr';
+import * as toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
+import { Author } from '../../model/Author';
 
-class AuthorList extends React.Component {
-  deleteAuthor(event, id) {
+type Props = {
+  authors: Author[],
+  onDeleteAuthor: Function,
+};
+
+class AuthorList extends Component<Props> {
+  deleteAuthor(event: any, id: string) {
     this.props.onDeleteAuthor(event, id);
     toastr.success('Author Deleted.');
   }
 
   render() {
-    const createAuthorRow = (author) => (
+    const { authors, onDeleteAuthor } = this.props;
+
+    const createAuthorRow = (author: Author) => (
       <tr key={author.id}>
         <td>
           <a href="#" onClick={(e) => this.deleteAuthor(e, author.id)}>Delete</a>
@@ -36,20 +45,12 @@ class AuthorList extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.authors.map(createAuthorRow, this)}
+            {authors.map(createAuthorRow, this)}
           </tbody>
         </table>
       </div>
     );
   }
 }
-
-AuthorList.propTypes = {
-  authors: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-  ]),
-  onDeleteAuthor: PropTypes.func,
-};
 
 export default AuthorList;

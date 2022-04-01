@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { FC, ChangeEventHandler } from 'react';
-// import * as React from 'react';
-// import * as PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
 import { Author } from '../../model/Author';
-// import { StateType } from 'typesafe-actions';
 import TextInput from '../../components/TextInput';
 
 type Props = {
