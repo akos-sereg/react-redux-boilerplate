@@ -1,8 +1,9 @@
-import React from 'react';
+import * as React from 'react';
+import { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import './style.scss';
 
-export default class MainPage extends React.Component {
+class MainPage extends Component {
   // eslint-disable-line react/prefer-stateless-function
 
   shouldComponentUpdate() {
@@ -25,3 +26,5 @@ export default class MainPage extends React.Component {
     );
   }
 }
+
+export default MainPage;

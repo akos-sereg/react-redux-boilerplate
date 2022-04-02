@@ -1,10 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import { Component } from 'react';
 import AuthorForm from '../../components/AuthorForm';
 import AuthorApi from '../../services/AuthorApi';
+import { Author } from '../../model/Author';
 
-export default class ManageAuthorPage extends React.Component {
-  constructor(props, context) {
+type Props = {
+  match: any,
+  onSaveAuthor: Function
+};
+
+type State = {
+    author: Author,
+    errors: any
+}
+
+class ManageAuthorPage extends Component<Props, State> {
+  constructor(props: any, context: any) {
     super(props, context);
     this.state = {
       author: { id: '', firstName: '', lastName: '' },
@@ -24,13 +35,13 @@ export default class ManageAuthorPage extends React.Component {
     }
   }
 
-  setAuthorState(event) {
-    const stateAuthor = this.state.author;
+  setAuthorState(event: any) {
+    const stateAuthor: any = this.state.author;
     stateAuthor[event.target.name] = event.target.value;
     return this.setState({ author: stateAuthor });
   }
 
-  saveAuthor(event) {
+  saveAuthor(event: any) {
     this.props.onSaveAuthor(event, this.state.author);
   }
 
@@ -47,7 +58,4 @@ export default class ManageAuthorPage extends React.Component {
   }
 }
 
-ManageAuthorPage.propTypes = {
-  match: PropTypes.object,
-  onSaveAuthor: PropTypes.func
-};
+export default ManageAuthorPage;

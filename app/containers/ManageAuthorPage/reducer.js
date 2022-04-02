@@ -9,7 +9,7 @@ import {
 
 // The initial state of the App
 const initialState = fromJS({
-  author: {}
+  author: { id: '', firstName: '', lastName: '' }
 });
 
 function manageAuthorReducer(state = initialState, action) {
