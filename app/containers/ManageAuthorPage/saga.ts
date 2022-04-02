@@ -3,7 +3,7 @@ import { updateAuthorError, updateAuthorSuccess, createAuthorSuccess } from './a
 import { UPDATE_AUTHOR } from './constants';
 import AuthorApi from '../../services/AuthorApi';
 
-export function* updateAuthorInternal(action) {
+export function* updateAuthorInternal(action: any) {
   try {
     const originalId = action.author.id;
     AuthorApi.saveAuthor(action.author);

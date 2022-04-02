@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import toastr from 'toastr';
+import * as toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
 
 import {
@@ -9,10 +9,10 @@ import {
 
 // The initial state of the App
 const initialState = fromJS({
-  author: { id: '', firstName: '', lastName: '' }
+  author: null
 });
 
-function manageAuthorReducer(state = initialState, action) {
+function manageAuthorReducer(state = initialState, action: any) {
   switch (action.type) {
     case UPDATE_AUTHOR_SUCCESS:
       toastr.success('Author Updated.');
