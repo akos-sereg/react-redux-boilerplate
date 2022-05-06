@@ -1,8 +1,6 @@
 # react-redux-boilerplate
 
-This project is a working standalone front-end app aiming to demonstrate best javascript practices and common usage of React / Redux. 
-
-It is using the latest React + Redux as of November 2018.
+This project is a working standalone front-end app aiming to demonstrate best javascript practices and common usage of React / Redux.
 
 ## Usage
 ```

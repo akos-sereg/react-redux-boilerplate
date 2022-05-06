@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { Helmet } from 'react-helmet';
-import './style.scss';
 
 class MainPage extends Component {
   // eslint-disable-line react/prefer-stateless-function

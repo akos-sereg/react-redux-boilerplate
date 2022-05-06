@@ -9,7 +9,6 @@ import MainPage from 'containers/MainPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import './style.scss';
 
 const App = () => (
   <div>
