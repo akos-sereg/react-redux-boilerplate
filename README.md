@@ -42,8 +42,6 @@ This will produce artifacts under ``build`` folder
 
 #### TODOs
 
-- Use function components instead of class components
-- Use `useEffect` instead of `componentDidMount`
 - Upgrade react-redux from 5 to 7
 
 ## Testing
