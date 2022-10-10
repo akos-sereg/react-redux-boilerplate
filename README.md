@@ -40,9 +40,11 @@ This will produce artifacts under ``build`` folder
 - Bootstrap 3
 - Toastr notifications
 
-#### Typescript
+#### TODOs
 
-npm install --save-dev typescript ts-loader
+- Use function components instead of class components
+- Use `useEffect` instead of `componentDidMount`
+- Upgrade react-redux from 5 to 7
 
 ## Testing
 

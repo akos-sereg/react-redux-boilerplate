@@ -2,28 +2,20 @@ import * as React from 'react';
 import { Component } from 'react';
 import { Helmet } from 'react-helmet';
 
-class MainPage extends Component {
-  // eslint-disable-line react/prefer-stateless-function
+const MainPage = () => {
+  return (
+    <div>
+      <Helmet>
+        <title>Main Page</title>
+        <meta
+          name="description"
+          content="Main page of React.js Boilerplate application"
+        />
+      </Helmet>
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
-  render() {
-    return (
-      <div>
-        <Helmet>
-          <title>Main Page</title>
-          <meta
-            name="description"
-            content="Main page of React.js Boilerplate application"
-          />
-        </Helmet>
-
-        Main
-      </div>
-    );
-  }
+      Main
+    </div>
+  );
 }
 
 export default MainPage;

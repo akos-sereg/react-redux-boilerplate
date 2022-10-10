@@ -1,61 +1,46 @@
 import * as React from 'react';
-import { Component } from 'react';
+import { useEffect, useState } from 'react';
 import AuthorForm from '../../components/AuthorForm';
 import AuthorApi from '../../services/AuthorApi';
 import { Author } from '../../model/Author';
+import { clone } from '../../services/Utils';
 
 type Props = {
   match: any,
   onSaveAuthor: Function
 };
 
-type State = {
-    author: Author,
-    errors: any
-}
+const ManageAuthorPage = (props: Props) => {
 
-class ManageAuthorPage extends Component<Props, State> {
-  constructor(props: any, context: any) {
-    super(props, context);
-    this.state = {
-      author: { id: '', firstName: '', lastName: '' },
-      errors: { }
-    };
+  const [author, setAuthor] = useState({ id: '', firstName: '', lastName: '' });
 
-    this.saveAuthor = this.saveAuthor.bind(this);
-    this.setAuthorState = this.setAuthorState.bind(this);
-  }
-
-  componentWillMount() {
-    const authorId = this.props.match.params.id;
+  useEffect(() => {
+    const authorId = props.match.params.id;
 
     if (authorId) {
-      const author = AuthorApi.getAuthorById(authorId);
-      this.setState({ author });
+      setAuthor(AuthorApi.getAuthorById(authorId));
     }
+  }, []);
+
+  const setAuthorState = (event: any) => {
+    const newAuthor: any = clone(author);
+    newAuthor[event.target.name] = event.target.value;
+    setAuthor(newAuthor)
   }
 
-  setAuthorState(event: any) {
-    const stateAuthor: any = this.state.author;
-    stateAuthor[event.target.name] = event.target.value;
-    return this.setState({ author: stateAuthor });
+  const saveAuthor = (event: any) => {
+    props.onSaveAuthor(event, author);
   }
 
-  saveAuthor(event: any) {
-    this.props.onSaveAuthor(event, this.state.author);
-  }
+  return (
+    <AuthorForm
+      author={author}
+      errors={{}}
+      onSave={saveAuthor}
+      onChange={setAuthorState}
+    />
 
-  render() {
-    return (
-      <AuthorForm
-        author={this.state.author}
-        errors={this.state.errors}
-        onSave={this.saveAuthor}
-        onChange={this.setAuthorState}
-      />
-
-    );
-  }
+  );
 }
 
 export default ManageAuthorPage;

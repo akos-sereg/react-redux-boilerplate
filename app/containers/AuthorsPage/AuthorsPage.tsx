@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect } from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthorList from '../../components/AuthorList';
@@ -10,24 +11,21 @@ type Props = {
   onDeleteAuthor: Function,
 };
 
-class AuthorsPage extends Component<Props> { // eslint-disable-line react/prefer-stateless-function
-  // eslint-disable-line react/prefer-stateless-function
+const AuthorsPage = (props: Props) => {
 
-  componentDidMount() {
-    this.props.onFetchAuthors();
-  }
+  const { authors, onDeleteAuthor } = props;
 
-  render() {
-    const { authors, onDeleteAuthor } = this.props;
+  useEffect(() => {
+    props.onFetchAuthors();
+  }, [])
 
-    return (
-      <div>
-        <h1>Authors</h1>
-        <Link to="/author" className="btn btn-default">Add Author</Link>
-        <AuthorList onDeleteAuthor={onDeleteAuthor} authors={authors} />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>Authors</h1>
+      <Link to="/author" className="btn btn-default">Add Author</Link>
+      <AuthorList onDeleteAuthor={onDeleteAuthor} authors={authors} />
+    </div>
+  );
 }
 
 export default AuthorsPage;

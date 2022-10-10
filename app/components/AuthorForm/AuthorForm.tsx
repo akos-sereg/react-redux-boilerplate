@@ -38,13 +38,4 @@ const AuthorForm: FC<Props> = ({author, onSave, onChange, errors}) => (
   </form>
 );
 
-
-/*
-AuthorForm.propTypes = {
-  author: PropTypes.object.isRequired,
-  onSave: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
-  errors: PropTypes.object
-};*/
-
 export default AuthorForm;
