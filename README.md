@@ -4,6 +4,8 @@ This project is a working standalone front-end app aiming to demonstrate best ja
 
 ## Usage
 ```
+$ nvm install 10.0.0
+$ nvm use 10.24.1
 $ npm install
 $ npm start
 ```
@@ -26,6 +28,7 @@ This will produce artifacts under ``build`` folder
 - Typescript
 
 #### Stack
+- Node v10.0.0 - released 24th of April 2018
 - React v17.0.2 - released 22nd of March 2021
 - Redux v4.0.1 - released 13rd of Oct 2018
 

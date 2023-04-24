@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import * as toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
-import { Author } from '../../model/Author';
+import { Author } from '../model/Author';
 
 type Props = {
   authors: Author[],

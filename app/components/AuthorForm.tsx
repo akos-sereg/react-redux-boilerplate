@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FC, ChangeEventHandler } from 'react';
-import { Author } from '../../model/Author';
-import TextInput from '../../components/TextInput';
+import { Author } from '../model/Author';
+import TextInput from './TextInput';
 
 type Props = {
   author: Author,
