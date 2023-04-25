@@ -1,31 +1,33 @@
 import * as React from 'react';
 import { useEffect } from 'react';
-import { Component } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import AuthorList from '../../components/AuthorList';
-import { Author } from '../../model/Author';
+import { AppState } from '../../model/AppState';
+import { fetchAuthors, deleteAuthor } from './actions';
 
-type Props = {
-  authors: Author[],
-  onFetchAuthors: Function,
-  onDeleteAuthor: Function,
-};
+const AuthorsPage = () => {
+    const dispatch = useDispatch();
+    const authors = useSelector((appState: AppState) => appState.authors.userData ? appState.authors.userData.authors : []);
 
-const AuthorsPage = (props: Props) => {
+    useEffect(() => {
+        dispatch(fetchAuthors());
+    }, [])
 
-  const { authors, onDeleteAuthor } = props;
+    const onDeleteAuthor = (event: any, authorId: string) => {
+        if (event !== undefined && event.preventDefault) {
+            event.preventDefault();
+        }
+        dispatch(deleteAuthor(authorId));
+    }
 
-  useEffect(() => {
-    props.onFetchAuthors();
-  }, [])
-
-  return (
-    <div>
-      <h1>Authors</h1>
-      <Link to="/author" className="btn btn-default">Add Author</Link>
-      <AuthorList onDeleteAuthor={onDeleteAuthor} authors={authors} />
-    </div>
-  );
+    return (
+        <div>
+            <h1>Authors</h1>
+            <Link to="/author" className="btn btn-default">Add Author</Link>
+            <AuthorList onDeleteAuthor={onDeleteAuthor} authors={authors}/>
+        </div>
+    );
 }
 
 export default AuthorsPage;

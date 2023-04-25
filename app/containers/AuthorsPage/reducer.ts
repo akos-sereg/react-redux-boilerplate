@@ -1,51 +1,54 @@
-import { fromJS } from 'immutable';
-import AuthorApi from '../../services/AuthorApi';
+import { Author } from '../../model/Author';
 
 import {
-  FETCH_AUTHORS,
-  FETCH_AUTHORS_SUCCESS,
-  FETCH_AUTHORS_ERROR,
-  DELETE_AUTHOR_SUCCESS,
+    FETCH_AUTHORS,
+    FETCH_AUTHORS_SUCCESS,
+    FETCH_AUTHORS_ERROR,
+    DELETE_AUTHOR_SUCCESS,
 } from './constants';
-
-// The initial state of the App
-const initialState = fromJS({
-  loading: false,
-  error: false,
-  userData: {
-    authors: []
-  }
-});
+import initialState from '../../utils/state/initialState';
 
 function authorsReducer(state = initialState, action: any) {
-  switch (action.type) {
-    case FETCH_AUTHORS:
-      return state
-        .set('loading', true)
-        .set('error', false)
-        .setIn(['userData', 'authors'], []);
+    switch (action.type) {
+        case FETCH_AUTHORS:
+            return {
+                ...state,
+                loading: true,
+                error: false,
+                userData: {
+                    authors: []
+                }
+            }
 
-    case FETCH_AUTHORS_SUCCESS:
-      return state
-        .setIn(['userData', 'authors'], action.authors)
-        .set('error', false)
-        .set('loading', false);
+        case FETCH_AUTHORS_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                error: false,
+                userData: {
+                    authors: action.authors
+                }
+            }
 
-    case FETCH_AUTHORS_ERROR:
-      return state
-        .set('error', action.error)
-        .set('loading', false)
-        .setIn(['userData', 'authors'], []);
+        case FETCH_AUTHORS_ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: action.error,
+                userData: {
+                    authors: Array<Author>()
+                }
+            }
 
-    case DELETE_AUTHOR_SUCCESS:
-      return state
-        .set('error', action.error)
-        .set('loading', false)
-        .setIn(['userData', 'authors'], AuthorApi.getAllAuthors());
+        case DELETE_AUTHOR_SUCCESS:
+            return {
+                ...state,
+                loading: false
+            }
 
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 }
 
 export default authorsReducer;

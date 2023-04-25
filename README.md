@@ -45,7 +45,12 @@ This will produce artifacts under ``build`` folder
 
 #### TODOs
 
-- Upgrade react-redux from 5 to 7
+- Upgrade Node version
+- Upgrade react-router-dom to 5.3.4
+- Use central saga, reducer collection
+- Use { type, payload } in all actions
+- AuthorApi to be async
+- Generate .map files, make sure debugging is easy
 
 ## Testing
 

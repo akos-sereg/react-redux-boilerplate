@@ -45,7 +45,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "5.2.0",
     "react-loadable": "^5.5.0",
-    "react-redux": "5.0.7",
+    "react-redux": "7.2.0",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "5.0.0-alpha.6",
     "redux": "4.0.1",
@@ -59,6 +59,7 @@
     "whatwg-fetch": "2.0.4"
   },
   "devDependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/lodash": "^4.14.181",
     "@types/react": "^17.0.43",
     "@types/react-helmet": "^6.1.5",
@@ -106,6 +107,7 @@
     "null-loader": "0.1.1",
     "plop": "2.0.0",
     "react-test-renderer": "^16.4.0",
+    "redux-devtools-extension": "^2.13.9",
     "rimraf": "2.6.2",
     "sass-loader": "^7.0.1",
     "shelljs": "^0.8.1",
