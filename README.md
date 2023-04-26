@@ -2,15 +2,30 @@
 
 This project is a working standalone front-end app aiming to demonstrate best javascript practices and common usage of React / Redux.
 
+## Stack
+- Node v14.21.2 - released 13th of December 2022
+- React v18.2.0 - released 14th of June 2022
+- Redux v4.2.1 - released 28th of Jan 2023
+
 ## Usage
+
+### Pre-requisites
+
 ```
 $ nvm install 14.21.2
 $ nvm use 14.21.2
+```
+
+### Start
+
+```
 $ npm install
 $ npm start
 ```
 
 Then open http://localhost:3000/
+
+### Production Build
 
 For production build, run the following command:
 
@@ -20,19 +35,14 @@ $ npm run build
 
 This will produce artifacts under ``build`` folder
 
-## Stack and Features
+## Features
 
-#### Language
+### Language
 - ES6
 - SCSS
 - Typescript
 
-#### Stack
-- Node v14.21.2 - released 13th of December 2022
-- React v18.2.0 - released 14th of June 2022
-- Redux v4.2.1 - released 28th of Jan 2023
-
-#### Development and Build
+### Development and Build
 - Hot Reload
 - Webpack
 - Sourcemap
@@ -41,11 +51,11 @@ This will produce artifacts under ``build`` folder
   - check: ``npm run lint``
   - fix: ``eslint --fix --ext .ts,.tsx . eol=lf``
 
-#### User Interface
+### User Interface
 - Bootstrap 3
 - Toastr notifications
 
-#### TODOs
+### TODOs
 
 - Upgrade Node version
 - Add tests
