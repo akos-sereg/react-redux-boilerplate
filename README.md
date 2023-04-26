@@ -28,7 +28,7 @@ This will produce artifacts under ``build`` folder
 - Typescript
 
 #### Stack
-- Node v10.0.0 - released 24th of April 2018
+- Node v14.21.2 - released 13th of December 2022
 - React v18.2.0 - released 14th of June 2022
 - Redux v4.2.1 - released 28th of Jan 2023
 
