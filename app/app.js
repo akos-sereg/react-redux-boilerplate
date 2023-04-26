@@ -5,23 +5,25 @@ import App from 'containers/App.tsx';
 import '!file-loader?name=[name].[ext]!./images/favicon.ico';
 /* eslint-enable import/no-webpack-loader-syntax */
 import 'styles/theme.scss';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { combineReducers } from 'redux';
 import ReactDOM from 'react-dom';
+import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import { HashRouter } from 'react-router-dom';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import 'sanitize.css/sanitize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import reducers from './utils/state/reducers.ts';
 import rootSaga from './utils/state/sagas.ts';
+import initialState from "./utils/state/initialState";
 
 export const sagaMiddleware = createSagaMiddleware();
-const store = createStore(
-    combineReducers(reducers),
-    composeWithDevTools(applyMiddleware(...[sagaMiddleware]))
-);
+const store = configureStore({
+    middleware: [sagaMiddleware],
+    reducer: combineReducers(reducers),
+    initialState
+});
 
 sagaMiddleware.run(rootSaga);
 
