@@ -24,7 +24,7 @@ function manageAuthorReducer(state = initialState, action: any) {
             return {
                 ...state,
                 author: action.payload.author
-            }
+            };
 
         default:
             return state;

@@ -1,25 +1,27 @@
-import { put, takeLatest } from 'redux-saga/effects';
+import { all, call, CallEffect, put, takeLatest } from 'redux-saga/effects';
 import { fetchAuthors, authorsFetched, fetchAuthorsError, deleteAuthorSuccess } from './actions';
 import { FETCH_AUTHORS, DELETE_AUTHOR } from './constants';
 import AuthorApi from '../../services/AuthorApi';
+import { Author } from '../../model/Author';
 
 export function* getAuthors() {
     try {
-        yield put(authorsFetched(AuthorApi.getAllAuthors()));
+        const authors: Author[] = yield call(AuthorApi.getAllAuthors);
+        yield put(authorsFetched(authors));
     } catch (err) {
         yield put(fetchAuthorsError(err));
     }
 }
 
 export function* deleteAuthor(action: any) {
-    AuthorApi.deleteAuthor(action.id);
-    yield put(deleteAuthorSuccess(action.id));
+    yield call(AuthorApi.deleteAuthor, action.payload.authorId);
+    yield put(deleteAuthorSuccess(action.payload.authorId));
     yield put(fetchAuthors());
 }
 
 export default function* rootSaga() {
-    yield [
+    yield all([
         takeLatest(FETCH_AUTHORS, getAuthors),
         takeLatest(DELETE_AUTHOR, deleteAuthor),
-    ];
+    ]);
 }

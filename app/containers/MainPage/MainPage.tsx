@@ -1,20 +1,18 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
-const MainPage = () => {
-    return (
-        <div>
-            <Helmet>
-                <title>Main Page</title>
-                <meta
-                    name="description"
-                    content="Main page of React.js Boilerplate application"
-                />
-            </Helmet>
+const MainPage = () => (
+    <div>
+    <Helmet>
+            <title>Main Page</title>
+            <meta
+                name="description"
+                content="Main page of React.js Boilerplate application"
+      />
+      </Helmet>
 
             Main
-        </div>
-    );
-}
+  </div>
+);
 
 export default MainPage;

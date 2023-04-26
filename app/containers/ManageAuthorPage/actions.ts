@@ -11,29 +11,37 @@ import { Author } from '../../model/Author';
 export function saveOrUpdateAuthor(author: Author) {
     return {
         type: UPDATE_AUTHOR,
-        author
+        payload: {
+            author
+        }
     };
 }
 
 export function updateAuthorSuccess(author: Author) {
     return {
         type: UPDATE_AUTHOR_SUCCESS,
-        author
+        payload: {
+            author
+        }
     };
 }
 
 export function updateAuthorError(author: Author, error: any) {
     return {
         type: UPDATE_AUTHOR_ERROR,
-        author,
-        error
+        payload: {
+            author,
+            error
+        }
     };
 }
 
 export function createAuthorSuccess(author: Author) {
     return {
         type: CREATE_AUTHOR_SUCCESS,
-        author
+        payload: {
+            author
+        }
     };
 }
 

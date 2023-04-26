@@ -9,14 +9,13 @@ type Props = {
     onDeleteAuthor: Function,
 };
 
-const AuthorList = (props: Props) => {
-
+export const AuthorList = (props: Props) => {
     const {authors, onDeleteAuthor} = props;
 
     const deleteAuthor = (event: any, id: string) => {
         onDeleteAuthor(event, id);
         toastr.success('Author Deleted.');
-    }
+    };
 
     const createAuthorRow = (author: Author) => (
         <tr key={author.id}>
@@ -48,6 +47,4 @@ const AuthorList = (props: Props) => {
             </table>
         </div>
     );
-}
-
-export default AuthorList;
+};

@@ -10,34 +10,30 @@ type Props = {
     errors?: any
 };
 
-const AuthorForm = (props: Props) => {
-    return (
-        <form>
+export const AuthorForm = (props: Props) => (
+    <form>
 
-            <h1>Manage Author</h1>
+        <h1>Manage Author</h1>
 
-            <TextInput
+        <TextInput
                 name="firstName"
                 label="First Name"
                 value={props.author.firstName}
                 error={props.errors.firstName}
                 onChange={props.onChange}
-            />
-            <br/>
+        />
+        <br/>
 
-            <TextInput
+        <TextInput
                 name="lastName"
                 label="Last Name"
                 value={props.author.lastName}
                 error={props.errors.lastName}
                 onChange={props.onChange}
-            />
-            <br/>
+        />
+        <br/>
 
-            <input type="submit" value="Save" className="btn btn-default" onClick={(event) => props.onSave(event)}/>
+        <input type="submit" value="Save" className="btn btn-default" onClick={(event) => props.onSave(event)}/>
 
-        </form>
-    )
-}
-
-export default AuthorForm;
+    </form>
+);

@@ -4,6 +4,6 @@ import manageAuthorPageReducer from '../../containers/ManageAuthorPage/reducer';
 const reducers = {
     authors: authorsPageReducer,
     manageAuthor: manageAuthorPageReducer
-}
+};
 
-export { reducers }
+export default reducers;

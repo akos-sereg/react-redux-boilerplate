@@ -5,7 +5,7 @@ import Footer from '../index.ts';
 
 describe('<Footer />', () => {
     it('should mention React', () => {
-        const renderedComponent = shallow(<Footer/>);
+        const renderedComponent = shallow(<Footer />);
         expect(renderedComponent.text()).toContain('React');
     });
 });

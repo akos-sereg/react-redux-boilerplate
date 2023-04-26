@@ -26,7 +26,7 @@ function authorsReducer(state = initialState, action: any) {
                 loading: false,
                 error: false,
                 userData: {
-                    authors: action.authors
+                    authors: action.payload.authors
                 }
             }
 
@@ -34,7 +34,7 @@ function authorsReducer(state = initialState, action: any) {
             return {
                 ...state,
                 loading: false,
-                error: action.error,
+                error: action.payload.error,
                 userData: {
                     authors: Array<Author>()
                 }

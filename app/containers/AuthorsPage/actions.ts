@@ -5,7 +5,7 @@ import {
     DELETE_AUTHOR,
     DELETE_AUTHOR_SUCCESS
 } from './constants';
-import {Author} from '../../model/Author';
+import { Author } from '../../model/Author';
 
 export function fetchAuthors() {
     return {
@@ -16,27 +16,35 @@ export function fetchAuthors() {
 export function authorsFetched(authors: Author[]) {
     return {
         type: FETCH_AUTHORS_SUCCESS,
-        authors
+        payload: {
+            authors
+        }
     };
 }
 
 export function fetchAuthorsError(error: any) {
     return {
         type: FETCH_AUTHORS_ERROR,
-        error,
+        payload: {
+            error
+        },
     };
 }
 
-export function deleteAuthor(id: string) {
+export function deleteAuthor(authorId: string) {
     return {
         type: DELETE_AUTHOR,
-        id
+        payload: {
+            authorId
+        }
     };
 }
 
-export function deleteAuthorSuccess(id: string) {
+export function deleteAuthorSuccess(authorId: string) {
     return {
         type: DELETE_AUTHOR_SUCCESS,
-        id
+        payload: {
+            authorId
+        }
     };
 }

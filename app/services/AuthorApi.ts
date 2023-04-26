@@ -1,10 +1,13 @@
 import * as _ from 'lodash';
-import { Author } from '../model/Author'
+import { Author } from '../model/Author';
+import { sleep, clone } from './Utils';
 
 class AuthorApi {
     authors: Author[];
+    simulatedLatencyMilliseconds: number;
 
     constructor() {
+        this.simulatedLatencyMilliseconds = 120;
         this.authors = [
             {
                 id: 'cory-house',
@@ -24,33 +27,33 @@ class AuthorApi {
         ];
     }
 
-    getAllAuthors() {
-        return AuthorApi.clone(this.authors);
+    getAllAuthors = async () => {
+        await sleep(this.simulatedLatencyMilliseconds);
+        return clone(this.authors);
     }
 
-    getAuthorById(id: string) {
-        const author = _.find(this.authors, {id});
-        return AuthorApi.clone(author);
+    getAuthorById = async (id: string) => {
+        const author = _.find(this.authors, { id });
+        await sleep(this.simulatedLatencyMilliseconds);
+        return clone(author);
     }
 
-    saveAuthor(author: Author) {
+    saveAuthor = async (author: Author) => {
         if (author.id) {
-            const existingAuthorIndex = _.indexOf(this.authors, _.find(this.authors, {id: author.id}));
+            const existingAuthorIndex = _.indexOf(this.authors, _.find(this.authors, { id: author.id }));
             this.authors.splice(existingAuthorIndex, 1, author);
         } else {
             author.id = AuthorApi.generateId(author);
             this.authors.push(author);
         }
 
-        return AuthorApi.clone(author);
+        await sleep(this.simulatedLatencyMilliseconds);
+        return clone(author);
     }
 
-    deleteAuthor(id: string) {
-        _.remove(this.authors, {id});
-    }
-
-    static clone(item: any) {
-        return JSON.parse(JSON.stringify(item));
+    deleteAuthor = async (id: string) => {
+        await sleep(this.simulatedLatencyMilliseconds);
+        _.remove(this.authors, { id });
     }
 
     static generateId(author: Author) {

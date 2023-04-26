@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import AuthorForm from '../../components/AuthorForm';
-import {AppState} from '../../model/AppState';
+import { AuthorForm } from '../../components/AuthorForm';
+import { AppState } from '../../model/AppState';
 import { clone } from '../../services/Utils';
 import { saveOrUpdateAuthor, fetchAuthorById } from './actions';
 
@@ -12,7 +12,7 @@ type Props = {
 
 const ManageAuthorPage = (props: Props) => {
     const dispatch = useDispatch();
-    const defaultAuthor = {id: '', firstName: '', lastName: ''};
+    const defaultAuthor = { id: '', firstName: '', lastName: '' };
     const [author, setAuthor] = useState(defaultAuthor);
     const persistedAuthor = useSelector((appState: AppState) => appState.manageAuthor.author);
 
@@ -39,8 +39,8 @@ const ManageAuthorPage = (props: Props) => {
     const setAuthorState = (event: any) => {
         const newAuthor: any = clone(author);
         newAuthor[event.target.name] = event.target.value;
-        setAuthor(newAuthor)
-    }
+        setAuthor(newAuthor);
+    };
 
     const saveAuthor = (event: any) => {
         if (event !== undefined && event.preventDefault) {
@@ -48,7 +48,7 @@ const ManageAuthorPage = (props: Props) => {
         }
 
         dispatch(saveOrUpdateAuthor(author));
-    }
+    };
 
     return (
         <AuthorForm
@@ -56,9 +56,9 @@ const ManageAuthorPage = (props: Props) => {
             errors={{}}
             onSave={saveAuthor}
             onChange={setAuthorState}
-        />
+      />
 
     );
-}
+};
 
 export default ManageAuthorPage;

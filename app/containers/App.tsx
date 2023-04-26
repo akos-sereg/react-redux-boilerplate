@@ -13,24 +13,24 @@ import Footer from '../components/Footer';
 const App = () => (
     <div>
         <Helmet titleTemplate="%s - React.js Boilerplate" defaultTitle="React.js Boilerplate">
-            <meta name="description" content="A React.js Boilerplate application"/>
-        </Helmet>
-        <Header/>
+        <meta name="description" content="A React.js Boilerplate application" />
+      </Helmet>
+        <Header />
 
-        <div className="container-fluid">
-            <Switch>
-                <Route exact path="/" component={MainPage}/>
-                <Route path="/app" component={MainPage}/>
-                <Route path="/about" component={AboutPage}/>
-                <Route path="/authors" component={AuthorsPage}/>
-                <Route path="/author/:id" component={ManageAuthorPage}/>
-                <Route path="/author" component={ManageAuthorPage}/>
-                <Route path="" component={NotFoundPage}/>
+    <div className="container-fluid">
+        <Switch>
+                <Route exact path="/" component={MainPage} />
+                <Route path="/app" component={MainPage} />
+                <Route path="/about" component={AboutPage} />
+                <Route path="/authors" component={AuthorsPage} />
+                <Route path="/author/:id" component={ManageAuthorPage} />
+                <Route path="/author" component={ManageAuthorPage} />
+                <Route path="" component={NotFoundPage} />
             </Switch>
         </div>
 
-        <Footer/>
-    </div>
+        <Footer />
+  </div>
 );
 
 export default App;

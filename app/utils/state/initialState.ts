@@ -11,6 +11,6 @@ const initialState: AppState = {
     manageAuthor: {
         author: null
     }
-}
+};
 
 export default initialState;
