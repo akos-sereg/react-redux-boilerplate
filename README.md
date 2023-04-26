@@ -4,8 +4,8 @@ This project is a working standalone front-end app aiming to demonstrate best ja
 
 ## Usage
 ```
-$ nvm install 10.0.0
-$ nvm use 10.24.1
+$ nvm install 14.21.2
+$ nvm use 14.21.2
 $ npm install
 $ npm start
 ```
@@ -48,8 +48,6 @@ This will produce artifacts under ``build`` folder
 #### TODOs
 
 - Upgrade Node version
-- Upgrade Redux
-- Upgrade React
 - Add tests
 - eslint to be aligned with editorconfig
 
