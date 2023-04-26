@@ -49,6 +49,7 @@ This will produce artifacts under ``build`` folder
 
 - Upgrade Node version
 - Add tests
+- introduce styled-components
 - eslint to be aligned with editorconfig
 
 ## Testing

@@ -2,11 +2,11 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { Switch, Route } from 'react-router-dom';
 
-import AboutPage from './AboutPage/Loadable';
+import AboutPage from './AboutPage';
 import AuthorsPage from './AuthorsPage/AuthorsPage';
 import ManageAuthorPage from './ManageAuthorPage/ManageAuthorPage';
-import MainPage from './MainPage/Loadable';
-import NotFoundPage from './NotFoundPage/Loadable';
+import MainPage from './MainPage';
+import NotFoundPage from './NotFoundPage';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
