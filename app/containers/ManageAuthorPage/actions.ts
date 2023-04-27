@@ -1,12 +1,12 @@
-import {
-    UPDATE_AUTHOR,
-    UPDATE_AUTHOR_SUCCESS,
-    UPDATE_AUTHOR_ERROR,
-    CREATE_AUTHOR_SUCCESS,
-    FETCH_AUTHOR,
-    FETCH_AUTHOR_SUCCESS
-} from './constants';
-import { Author } from '../../model/Author';
+export const UPDATE_AUTHOR = 'boilerplate/ManageAuthor/UPDATE_AUTHOR';
+export const UPDATE_AUTHOR_SUCCESS = 'boilerplate/ManageAuthor/UPDATE_AUTHOR_SUCCESS';
+export const UPDATE_AUTHOR_ERROR = 'boilerplate/ManageAuthor/UPDATE_AUTHOR_ERROR';
+
+export const CREATE_AUTHOR_SUCCESS = 'boilerplate/ManageAuthor/CREATE_AUTHOR_SUCCESS';
+export const FETCH_AUTHOR = 'boilerplate/ManageAuthor/FETCH_AUTHOR';
+export const FETCH_AUTHOR_SUCCESS = 'boilerplate/ManageAuthor/FETCH_AUTHOR_SUCCESS';
+
+import { Author } from '../../model/DTOs';
 
 export function saveOrUpdateAuthor(author: Author) {
     return {

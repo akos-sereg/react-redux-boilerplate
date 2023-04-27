@@ -1,13 +1,18 @@
 import * as _ from 'lodash';
-import { Author } from '../model/Author';
-import { sleep, clone } from './Utils';
+import { Author } from '../../model/DTOs';
+import { sleep, clone } from '../Utils';
+import { AuthorApi } from './AuthorApi';
+import ConfigService from '../ConfigService';
 
-class AuthorApi {
+/**
+ * This AuthorApi solution keeps data in-memory, which means that you get a fresh state after refreshing
+ * your browser tab.
+ */
+export default class InMemoryAuthorApi implements AuthorApi {
     authors: Author[];
-    simulatedLatencyMilliseconds: number;
 
     constructor() {
-        this.simulatedLatencyMilliseconds = 120;
+        console.log('Using InMemoryAuthorApi');
         this.authors = [
             {
                 id: 'cory-house',
@@ -27,32 +32,32 @@ class AuthorApi {
         ];
     }
 
-    getAllAuthors = async () => {
-        await sleep(this.simulatedLatencyMilliseconds);
+    public getAllAuthors = async () => {
+        await sleep(ConfigService.mockedLatencyMs);
         return clone(this.authors);
     }
 
-    getAuthorById = async (id: string) => {
+    public getAuthorById = async (id: string) => {
         const author = _.find(this.authors, { id });
-        await sleep(this.simulatedLatencyMilliseconds);
+        await sleep(ConfigService.mockedLatencyMs);
         return clone(author);
     }
 
-    saveAuthor = async (author: Author) => {
+    public saveAuthor = async (author: Author) => {
         if (author.id) {
             const existingAuthorIndex = _.indexOf(this.authors, _.find(this.authors, { id: author.id }));
             this.authors.splice(existingAuthorIndex, 1, author);
         } else {
-            author.id = AuthorApi.generateId(author);
+            author.id = InMemoryAuthorApi.generateId(author);
             this.authors.push(author);
         }
 
-        await sleep(this.simulatedLatencyMilliseconds);
+        await sleep(ConfigService.mockedLatencyMs);
         return clone(author);
     }
 
-    deleteAuthor = async (id: string) => {
-        await sleep(this.simulatedLatencyMilliseconds);
+    public deleteAuthor = async (id: string) => {
+        await sleep(ConfigService.mockedLatencyMs);
         _.remove(this.authors, { id });
     }
 
@@ -60,5 +65,3 @@ class AuthorApi {
         return `${author.firstName.toLowerCase()}-${author.lastName.toLowerCase()}`;
     }
 }
-
-export default new AuthorApi();

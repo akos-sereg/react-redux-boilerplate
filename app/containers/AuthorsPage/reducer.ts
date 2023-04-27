@@ -1,14 +1,15 @@
-import { Author } from '../../model/Author';
+import { Author } from '../../model/DTOs';
 
 import {
     FETCH_AUTHORS,
     FETCH_AUTHORS_SUCCESS,
     FETCH_AUTHORS_ERROR,
     DELETE_AUTHOR_SUCCESS,
-} from './constants';
+} from './actions';
 import initialState from '../../utils/state/initialState';
+import { Action } from '../../model/Action';
 
-function authorsReducer(state = initialState, action: any) {
+function authorsReducer(state = initialState, action: Action) {
     switch (action.type) {
         case FETCH_AUTHORS:
             return {

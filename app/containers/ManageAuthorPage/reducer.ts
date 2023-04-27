@@ -5,10 +5,11 @@ import {
     UPDATE_AUTHOR_SUCCESS,
     CREATE_AUTHOR_SUCCESS,
     FETCH_AUTHOR_SUCCESS
-} from './constants';
+} from './actions';
 import initialState from '../../utils/state/initialState';
+import { Action } from '../../model/Action';
 
-function manageAuthorReducer(state = initialState, action: any) {
+function manageAuthorReducer(state = initialState, action: Action) {
     switch (action.type) {
         case UPDATE_AUTHOR_SUCCESS:
             toastr.success('Author Updated.');

@@ -1,7 +1,11 @@
-import { Author } from './Author';
+import { Author } from './DTOs';
+
+export interface UserData {
+    authors: Author[]
+}
 
 export interface AuthorsState {
-  userData: any
+  userData: UserData
   loading: boolean
   error: any
 }

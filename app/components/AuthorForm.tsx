@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ChangeEventHandler } from 'react';
-import { Author } from '../model/Author';
+import { Author } from '../model/DTOs';
 import TextInput from './TextInput';
 
 type Props = {

@@ -3,16 +3,16 @@ import { Helmet } from 'react-helmet';
 
 const MainPage = () => (
     <div>
-    <Helmet>
+        <Helmet>
             <title>Main Page</title>
             <meta
-                name="description"
-                content="Main page of React.js Boilerplate application"
-      />
-      </Helmet>
+                    name="description"
+                    content="Main page of React.js Boilerplate application"
+            />
+        </Helmet>
 
-            Main
-  </div>
+        Main
+    </div>
 );
 
 export default MainPage;
