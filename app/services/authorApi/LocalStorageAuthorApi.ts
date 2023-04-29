@@ -1,7 +1,7 @@
 import { AuthorApi } from "./AuthorApi";
 import { clone, sleep } from "../Utils";
 import * as _ from "lodash";
-import { Author } from "../../model/DTOs";
+import { Author } from "../../packages/author/model/author";
 import ConfigService from "../ConfigService";
 
 export default class LocalStorageAuthorApi implements AuthorApi {

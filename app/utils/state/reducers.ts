@@ -1,5 +1,5 @@
-import authorsPageReducer from '../../containers/AuthorsPage/reducer';
-import manageAuthorPageReducer from '../../containers/ManageAuthorPage/reducer';
+import authorsPageReducer from '../../packages/author/reducers/authors-page-reducer';
+import manageAuthorPageReducer from '../../packages/author/reducers/manage-author-page-reducer';
 
 const reducers = {
     authors: authorsPageReducer,

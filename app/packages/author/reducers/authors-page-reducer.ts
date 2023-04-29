@@ -1,13 +1,13 @@
-import { Author } from '../../model/DTOs';
+import { Author } from '../model/author';
 
 import {
     FETCH_AUTHORS,
     FETCH_AUTHORS_SUCCESS,
     FETCH_AUTHORS_ERROR,
     DELETE_AUTHOR_SUCCESS,
-} from './actions';
-import initialState from '../../utils/state/initialState';
-import { Action } from '../../model/Action';
+} from '../actions/authors-actions';
+import initialState from '../../../utils/state/initialState';
+import { Action } from '../../../model/Action';
 
 function authorsReducer(state = initialState, action: Action) {
     switch (action.type) {

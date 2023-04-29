@@ -1,8 +1,8 @@
-import { all, call, CallEffect, put, takeLatest } from 'redux-saga/effects';
-import { fetchAuthors, authorsFetched, fetchAuthorsError, deleteAuthorSuccess } from './actions';
-import { FETCH_AUTHORS, DELETE_AUTHOR } from './actions';
-import { Author } from '../../model/DTOs';
-import ServiceProvider from '../../services/ServiceProvider';
+import { all, call, put, takeLatest } from 'redux-saga/effects';
+import { fetchAuthors, authorsFetched, fetchAuthorsError, deleteAuthorSuccess } from '../actions/authors-actions';
+import { FETCH_AUTHORS, DELETE_AUTHOR } from '../actions/authors-actions';
+import { Author } from '../model/author';
+import ServiceProvider from '../../../services/ServiceProvider';
 
 export function* getAuthors() {
     try {

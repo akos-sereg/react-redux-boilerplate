@@ -2,9 +2,9 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { AuthorList } from '../../components/AuthorList';
+import { AuthorList } from '../../packages/author/components/AuthorList';
 import { AppState } from '../../model/AppState';
-import { fetchAuthors, deleteAuthor } from './actions';
+import { fetchAuthors, deleteAuthor } from '../../packages/author/actions/authors-actions';
 
 const AuthorsPage = () => {
     const dispatch = useDispatch();

@@ -1,10 +1,9 @@
 import 'babel-polyfill';
 import React from 'react';
-import App from 'containers/App.tsx';
+import App from 'components/App';
 /* eslint-disable import/no-webpack-loader-syntax */
 import '!file-loader?name=[name].[ext]!./images/favicon.ico';
 /* eslint-enable import/no-webpack-loader-syntax */
-import 'styles/theme.scss';
 import { combineReducers } from 'redux';
 import ReactDOM from 'react-dom';
 import { configureStore } from '@reduxjs/toolkit';
@@ -44,7 +43,7 @@ if (module.hot) {
     // Hot reloadable React components and translation json files
     // modules.hot.accept does not accept dynamic dependencies,
     // have to be constants at compile-time
-    module.hot.accept(['containers/App'], () => {
+    module.hot.accept(['components/App'], () => {
         ReactDOM.unmountComponentAtNode(MOUNT_NODE);
         render();
     });

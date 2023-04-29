@@ -3,9 +3,14 @@
 This project is a working standalone front-end app aiming to demonstrate best javascript practices and common usage of React / Redux.
 
 ## Stack
-- Node v14.21.2 - released 13th of December 2022
-- React v18.2.0 - released 14th of June 2022
-- Redux v4.2.1 - released 28th of Jan 2023
+
+|Package        | Version       | Date of Release       |
+| ------------- | ------------- | --------------------- |
+| Node          | 14.21.2       | 13th of December 2022 |
+| React         | 18.2.0        | 14th of June 2022     |
+| Redux         | 4.2.1         | 28th of Jan 2023      |
+| Typescript    | 5.0.4         | 7th of April 2023     |
+
 
 ## Usage
 
@@ -57,7 +62,6 @@ This will produce artifacts under ``build`` folder
 
 ### TODOs
 
-- Upgrade Node version
 - Add tests
 - introduce styled-components
 - eslint to be aligned with editorconfig

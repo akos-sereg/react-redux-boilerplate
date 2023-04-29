@@ -1,4 +1,4 @@
-import { Author } from '../../model/DTOs';
+import { Author } from '../../packages/author/model/author';
 
 export interface AuthorApi {
     getAllAuthors: {

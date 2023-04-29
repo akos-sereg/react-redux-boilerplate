@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { Author } from '../../model/DTOs';
+import { Author } from '../../packages/author/model/author';
 import { sleep, clone } from '../Utils';
 import { AuthorApi } from './AuthorApi';
 import ConfigService from '../ConfigService';

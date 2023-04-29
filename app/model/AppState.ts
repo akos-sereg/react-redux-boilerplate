@@ -1,4 +1,4 @@
-import { Author } from './DTOs';
+import { Author } from '../packages/author/model/author';
 
 export interface UserData {
     authors: Author[]

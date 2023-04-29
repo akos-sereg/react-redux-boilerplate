@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import * as toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
-import { Author } from '../model/DTOs';
+import { Author } from '../model/author';
 
 type Props = {
     authors: Author[],

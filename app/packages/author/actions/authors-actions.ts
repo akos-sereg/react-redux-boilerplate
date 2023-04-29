@@ -5,7 +5,7 @@ export const FETCH_AUTHORS_ERROR = 'boilerplate/Author/FETCH_AUTHORS_ERROR';
 export const DELETE_AUTHOR = 'boilerplate/Author/DELETE_AUTHOR';
 export const DELETE_AUTHOR_SUCCESS = 'boilerplate/Author/DELETE_AUTHOR_SUCCESS';
 
-import { Author } from '../../model/DTOs';
+import { Author } from '../model/author';
 
 export function fetchAuthors() {
     return {

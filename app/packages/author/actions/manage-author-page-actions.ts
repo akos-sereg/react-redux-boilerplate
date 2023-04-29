@@ -6,7 +6,7 @@ export const CREATE_AUTHOR_SUCCESS = 'boilerplate/ManageAuthor/CREATE_AUTHOR_SUC
 export const FETCH_AUTHOR = 'boilerplate/ManageAuthor/FETCH_AUTHOR';
 export const FETCH_AUTHOR_SUCCESS = 'boilerplate/ManageAuthor/FETCH_AUTHOR_SUCCESS';
 
-import { Author } from '../../model/DTOs';
+import { Author } from '../model/author';
 
 export function saveOrUpdateAuthor(author: Author) {
     return {

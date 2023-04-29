@@ -17,7 +17,7 @@ class ConfigService {
     public mockedLatencyMs: number
 
     constructor() {
-        this.serviceType = ServiceType.LocalStorage;
+        this.serviceType = ServiceType.InMemory;
         this.mockedLatencyMs = 120;
     }
 

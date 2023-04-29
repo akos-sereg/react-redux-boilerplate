@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AuthorForm } from '../../components/AuthorForm';
+import { AuthorForm } from '../../packages/author/components/AuthorForm';
 import { AppState } from '../../model/AppState';
 import { clone } from '../../services/Utils';
-import { saveOrUpdateAuthor, fetchAuthorById } from './actions';
+import { saveOrUpdateAuthor, fetchAuthorById } from '../../packages/author/actions/manage-author-page-actions';
 
 type Props = {
     match: any
@@ -57,7 +57,6 @@ const ManageAuthorPage = (props: Props) => {
             onSave={saveAuthor}
             onChange={setAuthorState}
       />
-
     );
 };
 
