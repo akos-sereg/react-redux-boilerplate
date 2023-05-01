@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AuthorForm } from '../../packages/author/components/AuthorForm';
 import { AppState } from '../../model/AppState';
@@ -36,19 +36,19 @@ const ManageAuthorPage = (props: Props) => {
         }
     }, [persistedAuthor]);
 
-    const setAuthorState = (event: any) => {
+    const setAuthorState = useCallback((event: any) => {
         const newAuthor: any = clone(author);
         newAuthor[event.target.name] = event.target.value;
         setAuthor(newAuthor);
-    };
+    }, [author]);
 
-    const saveAuthor = (event: any) => {
+    const saveAuthor = useCallback((event: any) => {
         if (event !== undefined && event.preventDefault) {
             event.preventDefault();
         }
 
         dispatch(saveOrUpdateAuthor(author));
-    };
+    }, [author]);
 
     return (
         <AuthorForm

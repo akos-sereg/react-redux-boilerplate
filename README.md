@@ -63,7 +63,8 @@ This will produce artifacts under ``build`` folder
 ### TODOs
 
 - Add tests
-- introduce styled-components
+- Introduce react-error-boundary
+- Introduce styled-components
 - eslint to be aligned with editorconfig
 
 ## Testing
