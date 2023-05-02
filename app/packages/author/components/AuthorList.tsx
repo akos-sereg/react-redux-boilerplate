@@ -20,12 +20,12 @@ export const AuthorList = (props: Props) => {
     const createAuthorRow = (author: Author) => (
         <tr key={author.id}>
             <td>
-                <a href="#" onClick={(e) => deleteAuthor(e, author.id)}>Delete</a>
+                <a data-automation-id={'author-list-item-delete-button'} href="#" onClick={(e) => deleteAuthor(e, author.id)}>Delete</a>
             </td>
             <td>
-                <Link to={`/author/${author.id}`}>{author.id}</Link>
+                <Link data-automation-id={'author-list-item-id'} to={`/author/${author.id}`}>{author.id}</Link>
             </td>
-            <td>
+            <td data-automation-id={'author-list-item'}>
                 {author.firstName} {author.lastName}
             </td>
         </tr>

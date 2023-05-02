@@ -16,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 import reducers from './utils/state/reducers.ts';
 import rootSaga from './utils/state/sagas.ts';
 import initialState from "./utils/state/initialState";
+import { createRoot } from "react-dom/client";
 
 export const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({
@@ -26,27 +27,25 @@ const store = configureStore({
 
 sagaMiddleware.run(rootSaga);
 
-const MOUNT_NODE = document.getElementById('app');
+const MOUNT_NODE = document.getElementById('app')
+const root = createRoot(MOUNT_NODE)
 
 const render = () => {
-    ReactDOM.render(
+    root.render(
         <Provider store={store}>
-          <HashRouter>
-            <App />
-          </HashRouter>
-        </Provider>,
-        MOUNT_NODE
-    );
-};
+            <HashRouter>
+                <App />
+            </HashRouter>
+        </Provider>)
+}
 
 if (module.hot) {
     // Hot reloadable React components and translation json files
     // modules.hot.accept does not accept dynamic dependencies,
     // have to be constants at compile-time
     module.hot.accept(['components/App'], () => {
-        ReactDOM.unmountComponentAtNode(MOUNT_NODE);
-        render();
+        render()
     });
 }
 
-render();
+render()

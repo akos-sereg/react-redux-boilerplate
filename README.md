@@ -30,6 +30,8 @@ $ npm start
 
 Then open http://localhost:3000/
 
+Any modification in the code will trigger a rebuild cycle, and the browser will refresh the app automatically.
+
 ### Production Build
 
 For production build, run the following command:
@@ -47,11 +49,13 @@ This will produce artifacts under ``build`` folder
 - SCSS
 - Typescript
 
-### Development and Build
+### Development tech-stack
 - Hot Reload
 - Webpack
 - Sourcemap
-- Jest
+- Emotion
+- Jest - for Unit Testing
+- Cypress - for E2E Testing (you can install "Cypress Support" WebStorm plugin as well)
 - ESLint
   - check: ``npm run lint``
   - fix: ``eslint --fix --ext .ts,.tsx . eol=lf``
@@ -64,7 +68,6 @@ This will produce artifacts under ``build`` folder
 
 - Add tests
 - Introduce react-error-boundary
-- Introduce styled-components
 - eslint to be aligned with editorconfig
 
 ## Testing
@@ -76,3 +79,18 @@ $ npm run test
 ``` 
 
 It generates a coverage report as well. You can set coverage expectations in ``config/jest.config.js``
+
+## E2E Testing
+
+Make sure that the application is running (`npm start`), and you are using `InMemory` backend (`app/services/ConfigService.ts`), as E2E tests
+are running against your local instance.
+
+Then run the following command
+
+```
+$ npm run cypress:open
+```
+
+For headless run (eg. on CI/CD, like Jenkins) you can execute `npm run cypress:run`
+
+For more information, read `cypress/Readme.md`

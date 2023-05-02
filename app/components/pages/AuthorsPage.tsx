@@ -24,7 +24,7 @@ const AuthorsPage = () => {
     return (
         <div>
             <h1>Authors</h1>
-            <Link to="/author" className="btn btn-default">Add Author</Link>
+            <Link to="/author" className="btn btn-default" data-automation-id={'add-author-button'}>Add Author</Link>
             <AuthorList onDeleteAuthor={onDeleteAuthor} authors={authors} />
       </div>
     );
