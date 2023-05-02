@@ -1,6 +1,8 @@
 module.exports = {
+    collectCoverage: true,
     collectCoverageFrom: [
-        'app/**/*.{js,jsx}',
+        'app/**/*.ts',
+        'app/**/*.tsx',
         '!app/**/*.test.{js,jsx}',
         '!app/*/RbGenerated*/*.{js,jsx}',
         '!app/app.js',
@@ -16,6 +18,12 @@ module.exports = {
     },
     coverageReporters: ['json', 'lcov', 'text-summary'],
     moduleDirectories: ['node_modules', 'app'],
+    moduleFileExtensions: [
+        "ts",
+        "tsx",
+        "js",
+        "jsx"
+    ],
     moduleNameMapper: {
         '.*\\.(css|less|styl|scss|sass)$':
             '<rootDir>/config/jest-mocks/cssModule.js',
@@ -23,5 +31,8 @@ module.exports = {
             '<rootDir>/config/jest-mocks/image.js'
     },
     setupTestFrameworkScriptFile: '<rootDir>/config/test-setup.js',
-    testRegex: 'tests/.*\\.test\\.js$'
+    testRegex: 'tests/.*\\.test\\.js$',
+    transform: {
+        "\\.[jt]sx?$": "babel-jest"
+    }
 };

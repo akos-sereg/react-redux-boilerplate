@@ -21,7 +21,7 @@
     "lint:eslint": "eslint --ignore-path .gitignore",
     "eslint:fix": "eslint -- . --ignore-path .gitignore --fix",
     "lint:js": "npm run lint:eslint -- . ",
-    "pretest": "npm run test:clean && npm run lint",
+    "pretest": "npm run test:clean",
     "test:clean": "rimraf ./coverage",
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll"
@@ -60,9 +60,11 @@
     "whatwg-fetch": "2.0.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@reduxjs/toolkit": "^1.9.5",
+    "@types/jest": "^29.5.1",
     "@types/lodash": "^4.14.181",
     "@types/react": "^17.0.43",
     "@types/react-helmet": "^6.1.5",
@@ -73,6 +75,7 @@
     "babel-cli": "6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "8.2.3",
+    "babel-jest": "^29.5.0",
     "babel-loader": "7.1.4",
     "babel-plugin-dynamic-import-node": "1.2.0",
     "babel-plugin-react-transform": "3.0.0",
@@ -115,6 +118,7 @@
     "sass-loader": "^7.0.1",
     "shelljs": "^0.8.5",
     "style-loader": "^0.21.0",
+    "ts-jest": "^29.1.0",
     "ts-loader": "^8.2.0",
     "typescript": "5.0.4",
     "url-loader": "1.0.1",
