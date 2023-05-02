@@ -66,9 +66,10 @@ This will produce artifacts under ``build`` folder
 
 ### TODOs
 
-- Add tests
+- Add tests, increase coverage, set coverage thresholds higher
+- Fix versions in package.json
 - Introduce react-error-boundary
-- eslint to be aligned with editorconfig
+- eslint, tslint to be aligned with editorconfig
 
 ## Testing
 

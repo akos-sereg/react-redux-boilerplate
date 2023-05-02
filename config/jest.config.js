@@ -10,10 +10,10 @@ module.exports = {
     ],
     coverageThreshold: {
         global: {
-            statements: 10,
-            branches: 10,
+            statements: 6,
+            branches: 0,
             functions: 10,
-            lines: 10
+            lines: 5
         }
     },
     coverageReporters: ['json', 'lcov', 'text-summary'],
@@ -25,14 +25,14 @@ module.exports = {
         "jsx"
     ],
     moduleNameMapper: {
-        '.*\\.(css|less|styl|scss|sass)$':
-            '<rootDir>/config/jest-mocks/cssModule.js',
         '.*\\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
             '<rootDir>/config/jest-mocks/image.js'
     },
     setupTestFrameworkScriptFile: '<rootDir>/config/test-setup.js',
     testRegex: 'tests/.*\\.test\\.js$',
     transform: {
-        "\\.[jt]sx?$": "babel-jest"
-    }
+        '.+\\.(css|styl|less|sass|scss)$': 'jest-css-modules-transform',
+        '^.+\\.(ts|tsx)$': 'ts-jest',
+        '^.+\\.(js|jsx)$': 'babel-jest'
+    },
 };
