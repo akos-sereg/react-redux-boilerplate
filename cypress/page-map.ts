@@ -12,7 +12,8 @@ export const PageMap = {
         authorForm: {
             firstNameText: 'input[data-automation-id="first-name-textfield"]',
             lastNameText: 'input[data-automation-id="last-name-textfield"]',
-            saveButton: 'input[data-automation-id="save-author-button"]'
+            saveButton: 'input[data-automation-id="save-author-button"]',
+            textInputError: 'div[data-automation-id="textinput-error"]'
         },
         authorList: {
             items: 'td[data-automation-id="author-list-item"]',

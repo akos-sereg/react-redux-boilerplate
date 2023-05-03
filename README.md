@@ -54,8 +54,8 @@ This will produce artifacts under ``build`` folder
 - Webpack
 - Sourcemap
 - Emotion
-- Jest - for Unit Testing
-- Cypress - for E2E Testing (you can install "Cypress Support" WebStorm plugin as well)
+- Jest (with coverage reporting on typescript files)
+- Cypress (E2E)
 - ESLint
   - check: ``npm run lint``
   - fix: ``eslint --fix --ext .ts,.tsx . eol=lf``
@@ -69,6 +69,7 @@ This will produce artifacts under ``build`` folder
 - Add tests, increase coverage, set coverage thresholds higher
 - Fix versions in package.json
 - Introduce react-error-boundary
+- TextInput to use useRef instead of useState
 - eslint, tslint to be aligned with editorconfig
 
 ## Testing

@@ -8,20 +8,16 @@ type Props = {
     placeholder?: string,
     automationId?: string,
     value?: string,
-    error?: any
+    error?: string
 };
 
 const TextInput: FC<Props> = ({
     name, label, onChange, placeholder, automationId, value, error
 }) => {
-    let wrapperClass = 'form-group';
-    if (error && error.length > 0) {
-        wrapperClass += ' has-error';
-    }
-
     return (
-        <div className={wrapperClass}>
-            {/* eslint-disable jsx-a11y/label-has-for */}
+        <div className={`form-group ${error && error.length > 0 ? 'has-error' : ''}`}>
+
+        {/* eslint-disable jsx-a11y/label-has-for */}
         <label htmlFor={name}>{label}</label>
         <div className="field">
             <input
@@ -32,8 +28,8 @@ const TextInput: FC<Props> = ({
                 data-automation-id={automationId}
                 value={value}
                 onChange={onChange}
-          />
-                <div className="input">{error}</div>
+            />
+                <div data-automation-id={'textinput-error'} className="input">{error}</div>
             </div>
       </div>
     );

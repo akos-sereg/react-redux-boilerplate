@@ -3,3 +3,7 @@ export interface Author {
     firstName: string;
     lastName: string;
 }
+
+const defaultAuthor = { id: '', firstName: '', lastName: '' };
+
+export { defaultAuthor }
