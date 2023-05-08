@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FC, ChangeEventHandler, useRef } from 'react';
+import { FC, ChangeEventHandler } from 'react';
 
 type Props = {
     name: string,

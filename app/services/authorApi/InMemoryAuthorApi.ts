@@ -40,7 +40,7 @@ export default class InMemoryAuthorApi implements AuthorApi {
     public getAuthorById = async (id: string) => {
         const author = _.find(this.authors, { id });
         await sleep(ConfigService.mockedLatencyMs);
-        return clone(author);
+        return author ? clone(author) : null;
     }
 
     public saveAuthor = async (author: Author) => {
