@@ -57,8 +57,8 @@ This will produce artifacts under ``build`` folder
 - Jest (with coverage reporting on typescript files)
 - Cypress (E2E)
 - ESLint
-  - check: ``npm run lint``
-  - fix: ``eslint --fix --ext .ts,.tsx . eol=lf``
+  - check: ``npm run eslint``
+  - fix: ``npm run eslint:fix``
 
 ### User Interface
 - Bootstrap 3
@@ -66,11 +66,7 @@ This will produce artifacts under ``build`` folder
 
 ### TODOs
 
-- Add tests, increase coverage, set coverage thresholds higher
-- Fix versions in package.json
 - Introduce react-error-boundary
-- TextInput to use useRef instead of useState
-- eslint, tslint to be aligned with editorconfig
 
 ## Testing
 

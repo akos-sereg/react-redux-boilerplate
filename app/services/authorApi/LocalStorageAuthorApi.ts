@@ -5,7 +5,7 @@ import { Author } from "../../packages/author/model/author";
 import ConfigService from "../ConfigService";
 
 export default class LocalStorageAuthorApi implements AuthorApi {
-    localStorageKeyAuthors: string = 'authors'
+    localStorageKeyAuthors = 'authors'
     authors: Author[];
 
     constructor() {

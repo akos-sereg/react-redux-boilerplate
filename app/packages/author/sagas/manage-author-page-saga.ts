@@ -41,22 +41,26 @@ export function* fetchAuthorInternal(action: Action) {
     }
 }
 
-export function* updateSuccessInternal(action: Action) {
+export function* updateSuccessInternal(action: Action) : any {
     try {
         toastr.success('Author Updated.');
         window.location.href = HashLinkService.getAuthorsLink();
     } catch (err) {
         console.error(err);
     }
+
+    yield null
 }
 
-export function* createSuccessInternal(action: Action) {
+export function* createSuccessInternal(action: Action) : any {
     try {
         toastr.success('Author Created.');
         window.location.href = HashLinkService.getAuthorsLink();
     } catch (err) {
         console.error(err);
     }
+
+    yield null
 }
 
 export default function* rootSaga() {
