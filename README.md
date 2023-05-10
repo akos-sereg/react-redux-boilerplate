@@ -4,7 +4,7 @@ This project is a working standalone front-end app aiming to demonstrate best ja
 
 ## Stack
 
-|Package        | Version       | Date of Release       |
+| Package        | Version       | Date of Release       |
 | ------------- | ------------- | --------------------- |
 | Node          | 14.21.2       | 13th of December 2022 |
 | React         | 18.2.0        | 14th of June 2022     |
@@ -40,7 +40,19 @@ For production build, run the following command:
 $ npm run build
 ```
 
-This will produce artifacts under ``build`` folder
+This will produce artifacts under ``build`` 
+
+### Commands
+
+| Action        | Command       |
+| ------------- | ------------- |
+| Start             | ``npm run start``        |
+| Production Build  | ``npm run build``        |
+| ESLint        | ``npm run eslint``        |
+| ESLint Fix    | ``npm run eslint-fix``    |
+| Unit Tests    | ``npm run test``          |
+| E2E Tests for Humans  | ``npm run cypress:open``  |
+| E2E Tests for Machines (CI/CD) | ``npm run cypress:run``  |
 
 ## Features
 
@@ -57,8 +69,6 @@ This will produce artifacts under ``build`` folder
 - Jest (with coverage reporting on typescript files)
 - Cypress (E2E)
 - ESLint
-  - check: ``npm run eslint``
-  - fix: ``npm run eslint:fix``
 
 ### User Interface
 - Bootstrap 3
