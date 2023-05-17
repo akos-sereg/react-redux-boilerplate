@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AuthorForm, AuthorModelError } from '../../packages/author/components/AuthorForm';
 import { AppState } from '../../model/AppState';
 import { saveOrUpdateAuthor, fetchAuthorById } from '../../packages/author/actions/manage-author-page-actions';
-import { Author, defaultAuthor } from "../../packages/author/model/author";
+import { Author, defaultAuthor } from '../../packages/author/model/author';
+import { ErrorBoundary } from '../../packages/utils/ErrorBoundary';
 
 type Props = {
     match: any
@@ -12,8 +13,9 @@ type Props = {
 
 const ManageAuthorPage = (props: Props) => {
     const dispatch = useDispatch();
+    const initialErrors : AuthorModelError = { firstName: null, lastName: null }
     const [author, setAuthor] = useState(defaultAuthor);
-    const [errors, setErrors] = useState({ firstName: null, lastName: null });
+    const [errors, setErrors] = useState(initialErrors);
     const persistedAuthor = useSelector((appState: AppState) => appState.manageAuthor.author);
 
     // fetch persisted author from service, to avoid lost-update
@@ -27,7 +29,7 @@ const ManageAuthorPage = (props: Props) => {
     // populate persisted author in case of update, or set default author in case of create
     useEffect(() => {
         const authorId = props.match.params.id;
-        if (authorId && persistedAuthor) {
+        if (authorId && persistedAuthor && authorId == persistedAuthor.id) {
             setAuthor(persistedAuthor);
         }
 
@@ -68,11 +70,13 @@ const ManageAuthorPage = (props: Props) => {
     }, [author]);
 
     return (
-        <AuthorForm
-            author={author}
-            errors={errors}
-            onSave={saveAuthor}
-      />
+        <ErrorBoundary>
+            <AuthorForm
+                author={author}
+                errors={errors}
+                onSave={saveAuthor}
+            />
+        </ErrorBoundary>
     );
 };
 

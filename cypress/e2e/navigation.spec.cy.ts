@@ -1,18 +1,20 @@
 import { PageMap } from '../page-map'
+import { WEBAPP_URL_ROOT } from "../constants";
+import HashLinkService from "../../app/services/HashLinkService";
 
 describe('navigate between pages', () => {
     it('opens Home page by default', () => {
-        cy.visit('http://localhost:3000')
+        cy.visit(WEBAPP_URL_ROOT)
         cy.get(PageMap.home.container).should('contain', 'Main')
     })
 
     it('opens About page', () => {
-        cy.visit('http://localhost:3000/#/about')
+        cy.visit(`${WEBAPP_URL_ROOT}${HashLinkService.getAboutLink()}`)
         cy.get(PageMap.about.title).should('contain', 'About')
     })
 
     it('opens Authors page', () => {
-        cy.visit('http://localhost:3000/#/authors')
+        cy.visit(`${WEBAPP_URL_ROOT}${HashLinkService.getAuthorsLink()}`)
         cy.get(PageMap.authors.title).should('contain', 'Authors')
     })
 })

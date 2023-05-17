@@ -1,23 +1,24 @@
 import { WEBAPP_URL_ROOT } from '../constants';
 import { PageMap } from '../page-map'
+import HashLinkService from "../../app/services/HashLinkService";
 
 describe('User Error Handling', () => {
 
     const navigateToCreateAuthor = () => {
-        cy.visit(`${WEBAPP_URL_ROOT}/#/authors`)
+        cy.visit(`${WEBAPP_URL_ROOT}${HashLinkService.getAuthorsLink()}`)
         cy.get(PageMap.authors.addAuthorButton).click()
-        cy.url().should('eq', `${WEBAPP_URL_ROOT}/#/author`)
+        cy.url().should('eq', `${WEBAPP_URL_ROOT}${HashLinkService.getAddAuthorLink()}`)
     }
 
-    const navigateToUpdateAuthor = () => {
-        cy.visit(`${WEBAPP_URL_ROOT}/#/authors`)
+    const navigateToUpdateAuthor = (authorId: string) => {
+        cy.visit(`${WEBAPP_URL_ROOT}${HashLinkService.getAuthorsLink()}`)
         cy.get(PageMap.authors.authorList.ids).should('have.length', 3)
         cy.get(PageMap.authors.authorList.ids).first().click()
-        cy.url().should('eq', `${WEBAPP_URL_ROOT}/#/author/cory-house`)
+        cy.url().should('eq', `${WEBAPP_URL_ROOT}${HashLinkService.getAuthorLink(authorId)}`)
     }
 
     const verifyThatAuthorListDidNotChange = () => {
-        cy.visit(`${WEBAPP_URL_ROOT}/#/authors`)
+        cy.visit(`${WEBAPP_URL_ROOT}${HashLinkService.getAuthorsLink()}`)
         cy.get(PageMap.authors.authorList.ids).should('have.length', 3)
     }
 
@@ -67,7 +68,7 @@ describe('User Error Handling', () => {
     })
 
     it('detects empty first name upon update', () => {
-        navigateToUpdateAuthor()
+        navigateToUpdateAuthor('cory-house')
 
         cy.get(PageMap.authors.authorForm.firstNameText).type(' the Greatest')
         cy.get(PageMap.authors.authorForm.lastNameText).clear()
@@ -80,7 +81,7 @@ describe('User Error Handling', () => {
     })
 
     it('detects empty last name upon update', () => {
-        navigateToUpdateAuthor()
+        navigateToUpdateAuthor('cory-house')
 
         cy.get(PageMap.authors.authorForm.firstNameText).clear()
         cy.get(PageMap.authors.authorForm.lastNameText).type('ehlo')

@@ -9,6 +9,18 @@ class HashLinkService {
     getAuthorsLink = () => {
         return '/#/authors';
     }
+
+    getAddAuthorLink = () => {
+        return '/#/author';
+    }
+
+    getAuthorLink = (authorId: string) => {
+        return `/#/author/${authorId}`;
+    }
+
+    getAboutLink = () => {
+        return '/#/about';
+    }
 }
 
 export default new HashLinkService();

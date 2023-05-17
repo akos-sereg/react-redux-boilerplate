@@ -10,8 +10,8 @@ const Button = styled.input<{ primary: boolean }>`
 
 type OnSaveFunction = (event: any, author: Author) => void;
 export type AuthorModelError = {
-    firstName: string
-    lastName: string
+    firstName: string | null
+    lastName: string | null
 }
 type Props = {
     author: Author,
@@ -25,6 +25,10 @@ export const AuthorForm = (props: Props) => {
 
     useEffect(() => {
         setAuthor(props.author)
+
+        if (props.author.firstName === 'buggy-0123456789') {
+            throw Error('Throwing an error from useEffect intentionally, to check if ErrorBoundary works properly')
+        }
     }, [props.author])
 
     return (

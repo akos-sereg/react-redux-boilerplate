@@ -23,5 +23,8 @@ export const PageMap = {
     },
     about: {
         title: 'h1'
+    },
+    error: {
+        errorBoundaryText: 'div[data-automation-id="error-boundary-text"]'
     }
 }
