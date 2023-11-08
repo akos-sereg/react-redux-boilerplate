@@ -11,24 +11,17 @@ type Props = {
     match: any
 };
 
-const ManageAuthorPage = (props: Props) => {
+const useFetchAuthorFromService = (authorId: string) => {
     const dispatch = useDispatch();
-    const initialErrors : AuthorModelError = { firstName: null, lastName: null }
-    const [author, setAuthor] = useState(defaultAuthor);
-    const [errors, setErrors] = useState(initialErrors);
-    const persistedAuthor = useSelector((appState: AppState) => appState.manageAuthor.author);
-
-    // fetch persisted author from service, to avoid lost-update
     useEffect(() => {
-        const authorId = props.match.params.id;
         if (authorId) {
             dispatch(fetchAuthorById(authorId));
         }
     }, []);
+}
 
-    // populate persisted author in case of update, or set default author in case of create
+const usePopulateForm = (authorId: string, persistedAuthor: Author, setAuthor: any) => {
     useEffect(() => {
-        const authorId = props.match.params.id;
         if (authorId && persistedAuthor && authorId == persistedAuthor.id) {
             setAuthor(persistedAuthor);
         }
@@ -37,6 +30,19 @@ const ManageAuthorPage = (props: Props) => {
             setAuthor(defaultAuthor);
         }
     }, [persistedAuthor]);
+}
+
+const ManageAuthorPage = (props: Props) => {
+    const dispatch = useDispatch();
+    const initialErrors : AuthorModelError = { firstName: null, lastName: null }
+    const [author, setAuthor] = useState(defaultAuthor);
+    const [errors, setErrors] = useState(initialErrors);
+    const persistedAuthor = useSelector((appState: AppState) => appState.manageAuthor.author);
+
+    const authorId = props.match.params.id;
+
+    useFetchAuthorFromService(authorId);
+    usePopulateForm(authorId, persistedAuthor, setAuthor);
 
     // ui interactions
     const saveAuthor = useCallback((event: any, author: Author) => {

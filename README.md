@@ -6,7 +6,7 @@ This project is a working standalone front-end app aiming to demonstrate best ja
 
 | Package        | Version       | Date of Release       |
 | ------------- | ------------- | --------------------- |
-| Node          | 14.21.2       | 13th of December 2022 |
+| Node          | 20.9.0        | 24th of October 2023 |
 | React         | 18.2.0        | 14th of June 2022     |
 | Redux         | 4.2.1         | 28th of Jan 2023      |
 | Typescript    | 5.0.4         | 7th of April 2023     |
@@ -17,8 +17,8 @@ This project is a working standalone front-end app aiming to demonstrate best ja
 ### Pre-requisites
 
 ```
-$ nvm install 14.21.2
-$ nvm use 14.21.2
+$ nvm install 20.9.0
+$ nvm use 20.9.0
 ```
 
 ### Start
