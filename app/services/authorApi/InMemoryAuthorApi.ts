@@ -9,59 +9,59 @@ import ConfigService from '../ConfigService';
  * your browser tab.
  */
 export default class InMemoryAuthorApi implements AuthorApi {
-    authors: Author[];
+  authors: Author[];
 
-    constructor() {
-        console.log('Using InMemoryAuthorApi');
-        this.authors = [
-            {
-                id: 'cory-house',
-                firstName: 'Cory',
-                lastName: 'House'
-            },
-            {
-                id: 'scott-allen',
-                firstName: 'Scott',
-                lastName: 'Allen'
-            },
-            {
-                id: 'dan-wahlin',
-                firstName: 'Dan',
-                lastName: 'Wahlin'
-            }
-        ];
+  constructor() {
+    console.log('Using InMemoryAuthorApi');
+    this.authors = [
+      {
+        id: 'cory-house',
+        firstName: 'Cory',
+        lastName: 'House'
+      },
+      {
+        id: 'scott-allen',
+        firstName: 'Scott',
+        lastName: 'Allen'
+      },
+      {
+        id: 'dan-wahlin',
+        firstName: 'Dan',
+        lastName: 'Wahlin'
+      }
+    ];
+  }
+
+  public getAllAuthors = async () => {
+    await sleep(ConfigService.mockedLatencyMs);
+    return clone(this.authors);
+  };
+
+  public getAuthorById = async (id: string) => {
+    const author = _.find(this.authors, { id });
+    await sleep(ConfigService.mockedLatencyMs);
+    return author ? clone(author) : null;
+  };
+
+  public saveAuthor = async (author: Author) => {
+    if (author.id) {
+      const existingAuthorIndex = _.indexOf(this.authors, _.find(this.authors, { id: author.id }));
+      this.authors.splice(existingAuthorIndex, 1, author);
+    } else {
+      author.id = InMemoryAuthorApi.generateId(author);
+      this.authors.push(author);
     }
 
-    public getAllAuthors = async () => {
-        await sleep(ConfigService.mockedLatencyMs);
-        return clone(this.authors);
-    }
+    await sleep(ConfigService.mockedLatencyMs);
+    return clone(author);
+  };
 
-    public getAuthorById = async (id: string) => {
-        const author = _.find(this.authors, { id });
-        await sleep(ConfigService.mockedLatencyMs);
-        return author ? clone(author) : null;
-    }
+  public deleteAuthor = async (id: string) => {
+    await sleep(ConfigService.mockedLatencyMs);
+    _.remove(this.authors, { id });
+  };
 
-    public saveAuthor = async (author: Author) => {
-        if (author.id) {
-            const existingAuthorIndex = _.indexOf(this.authors, _.find(this.authors, { id: author.id }));
-            this.authors.splice(existingAuthorIndex, 1, author);
-        } else {
-            author.id = InMemoryAuthorApi.generateId(author);
-            this.authors.push(author);
-        }
-
-        await sleep(ConfigService.mockedLatencyMs);
-        return clone(author);
-    }
-
-    public deleteAuthor = async (id: string) => {
-        await sleep(ConfigService.mockedLatencyMs);
-        _.remove(this.authors, { id });
-    }
-
-    static generateId(author: Author) {
-        return `${author.firstName.toLowerCase()}-${author.lastName.toLowerCase()}`;
-    }
+  static generateId(author: Author) {
+    return `${author.firstName.toLowerCase()}-${author.lastName.toLowerCase()}`;
+  }
 }

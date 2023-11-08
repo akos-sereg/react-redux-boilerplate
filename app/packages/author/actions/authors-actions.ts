@@ -8,43 +8,43 @@ export const DELETE_AUTHOR_SUCCESS = 'boilerplate/Author/DELETE_AUTHOR_SUCCESS';
 import { Author } from '../model/author';
 
 export function fetchAuthors() {
-    return {
-        type: FETCH_AUTHORS
-    };
+  return {
+    type: FETCH_AUTHORS
+  };
 }
 
 export function authorsFetched(authors: Author[]) {
-    return {
-        type: FETCH_AUTHORS_SUCCESS,
-        payload: {
-            authors
-        }
-    };
+  return {
+    type: FETCH_AUTHORS_SUCCESS,
+    payload: {
+      authors
+    }
+  };
 }
 
 export function fetchAuthorsError(error: any) {
-    return {
-        type: FETCH_AUTHORS_ERROR,
-        payload: {
-            error
-        },
-    };
+  return {
+    type: FETCH_AUTHORS_ERROR,
+    payload: {
+      error
+    }
+  };
 }
 
 export function deleteAuthor(authorId: string) {
-    return {
-        type: DELETE_AUTHOR,
-        payload: {
-            authorId
-        }
-    };
+  return {
+    type: DELETE_AUTHOR,
+    payload: {
+      authorId
+    }
+  };
 }
 
 export function deleteAuthorSuccess(authorId: string) {
-    return {
-        type: DELETE_AUTHOR_SUCCESS,
-        payload: {
-            authorId
-        }
-    };
+  return {
+    type: DELETE_AUTHOR_SUCCESS,
+    payload: {
+      authorId
+    }
+  };
 }

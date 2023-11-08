@@ -7,8 +7,8 @@
 import * as React from 'react';
 
 const NotFoundPage = () => (
-    <article>
-        <h1>Page not found.</h1>
+  <article>
+    <h1>Page not found.</h1>
   </article>
 );
 

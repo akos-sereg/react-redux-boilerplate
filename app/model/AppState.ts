@@ -1,20 +1,20 @@
 import { Author } from '../packages/author/model/author';
 
 export interface UserData {
-    authors: Author[]
+  authors: Author[];
 }
 
 export interface AuthorsState {
-  userData: UserData
-  loading: boolean
-  error: any
+  userData: UserData;
+  loading: boolean;
+  error: any;
 }
 
 export interface ManageAuthorState {
-  author: Author
+  author: Author;
 }
 
 export interface AppState {
-  authors: AuthorsState,
-  manageAuthor: ManageAuthorState
+  authors: AuthorsState;
+  manageAuthor: ManageAuthorState;
 }

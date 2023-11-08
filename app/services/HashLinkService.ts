@@ -6,21 +6,21 @@
  * instead of searching in files for "/#/" patterns.
  */
 class HashLinkService {
-    getAuthorsLink = () => {
-        return '/#/authors';
-    }
+  getAuthorsLink = () => {
+    return '/#/authors';
+  };
 
-    getAddAuthorLink = () => {
-        return '/#/author';
-    }
+  getAddAuthorLink = () => {
+    return '/#/author';
+  };
 
-    getAuthorLink = (authorId: string) => {
-        return `/#/author/${authorId}`;
-    }
+  getAuthorLink = (authorId: string) => {
+    return `/#/author/${authorId}`;
+  };
 
-    getAboutLink = () => {
-        return '/#/about';
-    }
+  getAboutLink = () => {
+    return '/#/about';
+  };
 }
 
 export default new HashLinkService();

@@ -9,56 +9,56 @@ export const FETCH_AUTHOR_SUCCESS = 'boilerplate/ManageAuthor/FETCH_AUTHOR_SUCCE
 import { Author } from '../model/author';
 
 export function saveOrUpdateAuthor(author: Author) {
-    return {
-        type: UPDATE_AUTHOR,
-        payload: {
-            author
-        }
-    };
+  return {
+    type: UPDATE_AUTHOR,
+    payload: {
+      author
+    }
+  };
 }
 
 export function updateAuthorSuccess(author: Author) {
-    return {
-        type: UPDATE_AUTHOR_SUCCESS,
-        payload: {
-            author
-        }
-    };
+  return {
+    type: UPDATE_AUTHOR_SUCCESS,
+    payload: {
+      author
+    }
+  };
 }
 
 export function updateAuthorError(author: Author, error: any) {
-    return {
-        type: UPDATE_AUTHOR_ERROR,
-        payload: {
-            author,
-            error
-        }
-    };
+  return {
+    type: UPDATE_AUTHOR_ERROR,
+    payload: {
+      author,
+      error
+    }
+  };
 }
 
 export function createAuthorSuccess(author: Author) {
-    return {
-        type: CREATE_AUTHOR_SUCCESS,
-        payload: {
-            author
-        }
-    };
+  return {
+    type: CREATE_AUTHOR_SUCCESS,
+    payload: {
+      author
+    }
+  };
 }
 
 export function fetchAuthorById(authorId: string) {
-    return {
-        type: FETCH_AUTHOR,
-        payload: {
-            authorId
-        }
-    };
+  return {
+    type: FETCH_AUTHOR,
+    payload: {
+      authorId
+    }
+  };
 }
 
 export function fetchAuthorSuccess(author: Author) {
-    return {
-        type: FETCH_AUTHOR_SUCCESS,
-        payload: {
-            author
-        }
-    };
+  return {
+    type: FETCH_AUTHOR_SUCCESS,
+    payload: {
+      author
+    }
+  };
 }

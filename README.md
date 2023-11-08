@@ -4,13 +4,12 @@ This project is a working standalone front-end app aiming to demonstrate best ja
 
 ## Stack
 
-| Package        | Version       | Date of Release       |
-| ------------- | ------------- | --------------------- |
-| Node          | 20.9.0        | 24th of October 2023 |
-| React         | 18.2.0        | 14th of June 2022     |
-| Redux         | 4.2.1         | 28th of Jan 2023      |
-| Typescript    | 5.0.4         | 7th of April 2023     |
-
+| Package    | Version | Date of Release      |
+| ---------- | ------- | -------------------- |
+| Node       | 20.9.0  | 24th of October 2023 |
+| React      | 18.2.0  | 14th of June 2022    |
+| Redux      | 4.2.1   | 28th of Jan 2023     |
+| Typescript | 5.0.4   | 7th of April 2023    |
 
 ## Usage
 
@@ -40,28 +39,31 @@ For production build, run the following command:
 $ npm run build
 ```
 
-This will produce artifacts under ``build`` 
+This will produce artifacts under `build`
 
 ### Commands
 
-| Action        | Command       |
-| ------------- | ------------- |
-| Start             | ``npm run start``        |
-| Production Build  | ``npm run build``        |
-| ESLint        | ``npm run eslint``        |
-| ESLint Fix    | ``npm run eslint-fix``    |
-| Unit Tests    | ``npm run test``          |
-| E2E Tests for Humans  | ``npm run cypress:open``  |
-| E2E Tests for Machines (CI/CD) | ``npm run cypress:run``  |
+| Action                         | Command                |
+| ------------------------------ | ---------------------- |
+| Start                          | `npm run start`        |
+| Production Build               | `npm run build`        |
+| ESLint                         | `npm run eslint`       |
+| ESLint Fix                     | `npm run eslint-fix`   |
+| Prettier                       | `npm run format`       |
+| Unit Tests                     | `npm run test`         |
+| E2E Tests for Humans           | `npm run cypress:open` |
+| E2E Tests for Machines (CI/CD) | `npm run cypress:run`  |
 
 ## Features
 
 ### Language
+
 - ES6
 - SCSS
 - Typescript
 
 ### Development tech-stack
+
 - Hot Reload
 - Webpack
 - Sourcemap
@@ -69,8 +71,10 @@ This will produce artifacts under ``build``
 - Jest (with coverage reporting on typescript files)
 - Cypress (E2E)
 - ESLint
+- Prettier
 
 ### User Interface
+
 - Bootstrap 3
 - Toastr notifications
 
@@ -84,9 +88,9 @@ Run the following command
 
 ```
 $ npm run test
-``` 
+```
 
-It generates a coverage report as well. You can set coverage expectations in ``config/jest.config.js``
+It generates a coverage report as well. You can set coverage expectations in `config/jest.config.js`
 
 ## E2E Testing
 

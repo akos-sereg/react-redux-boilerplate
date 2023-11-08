@@ -1,1 +1,1 @@
-export const WEBAPP_URL_ROOT = 'http://localhost:3000'
+export const WEBAPP_URL_ROOT = 'http://localhost:3000';
